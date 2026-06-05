@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thailand 2025 — Familie Reis</title>
+<title>Thailand 2026 — Familie Reis</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--sand:#F5EDD8;--sand-dark:#E8D9B5;--terra:#C4622D;--terra-light:#E8855A;--terra-dark:#8B3A15;--green:#3D6B4F;--cream:#FDFAF3;--text:#2C1A0E;--text-muted:#7A5C42;--white:#fff;--radius:12px;--radius-lg:20px;}
@@ -47,10 +47,26 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .agenda-remove{margin-left:auto;font-size:11px;color:var(--text-muted);cursor:pointer;padding:2px 6px;border-radius:6px;border:1px solid var(--sand-dark);background:none;font-family:'DM Sans',sans-serif;}
 .agenda-remove:hover{border-color:var(--terra-light);color:var(--terra);}
 .agenda-empty{font-size:13px;color:var(--text-muted);font-style:italic;}
-.search-bar{display:flex;gap:10px;margin-bottom:1.25rem;}
-.search-input{flex:1;padding:11px 16px;border-radius:var(--radius);border:1px solid var(--sand-dark);font-family:'DM Sans',sans-serif;font-size:15px;background:var(--white);color:var(--text);outline:none;}
-.search-input:focus{border-color:var(--terra-light);}
-.search-clear{padding:11px 18px;background:var(--sand);color:var(--text-muted);border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;}
+
+.search-section{background:var(--green);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;}
+.search-section-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--sand);margin-bottom:0.25rem;}
+.search-section-hint{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:1rem;}
+.search-bar{display:flex;gap:10px;}
+.search-input{flex:1;padding:11px 16px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:15px;background:rgba(255,255,255,0.95);color:var(--text);outline:none;}
+.search-input:focus{background:var(--white);}
+.search-btn{padding:11px 20px;background:var(--terra);color:var(--white);border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;}
+.search-btn:hover{background:var(--terra-dark);}
+.search-btn:disabled{opacity:0.6;cursor:not-allowed;}
+.search-results{margin-top:1rem;display:flex;flex-direction:column;gap:10px;}
+.search-result-card{background:rgba(255,255,255,0.95);border-radius:var(--radius);padding:1rem 1.25rem;}
+.src-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:6px;}
+.src-name{font-weight:500;font-size:15px;color:var(--text);}
+.src-add{background:var(--terra);color:var(--white);border:none;border-radius:8px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0;}
+.src-add:hover{background:var(--terra-dark);}
+.src-meta{font-size:13px;color:var(--text-muted);margin-bottom:4px;}
+.src-tip{font-size:12px;color:var(--green);font-style:italic;}
+.search-msg{color:rgba(255,255,255,0.7);font-size:14px;font-style:italic;padding:0.5rem 0;}
+
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem;}
 .filter-btn{padding:6px 16px;border-radius:20px;border:1px solid var(--sand-dark);background:var(--white);color:var(--text-muted);font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;}
 .filter-btn.active{background:var(--terra);border-color:var(--terra);color:var(--white);font-weight:500;}
@@ -117,7 +133,7 @@ footer strong{color:var(--sand-dark);}
 </head>
 <body>
 <nav>
-  <span class="logo">&#127796; Thailand 2025</span>
+  <span class="logo">&#127796; Thailand 2026</span>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('route')">Route</button>
     <button class="nav-tab" onclick="showPage('activiteiten')">Activiteiten</button>
@@ -125,7 +141,7 @@ footer strong{color:var(--sand-dark);}
   <span class="nav-right"><a href="#" onclick="showPage('activiteiten');setTimeout(()=>document.getElementById('omrekenen').scrollIntoView({behavior:'smooth'}),80);return false;">Baht &#8594; &#8364;</a></span>
 </nav>
 <div class="hero">
-  <div class="hero-eyebrow">Familiereis &middot; Juli &ndash; Augustus 2025</div>
+  <div class="hero-eyebrow">Familiereis &middot; Juli &ndash; Augustus 2026</div>
   <h1>Thailand<br>met z&apos;n vijven</h1>
   <p class="hero-sub">Bangkok &middot; Ayutthaya &middot; Chiang Mai &middot; Khao Sok &middot; Koh Samui &middot; Koh Tao &middot; Hua Hin &middot; Bangkok</p>
   <div class="hero-stats">
@@ -145,15 +161,20 @@ footer strong{color:var(--sand-dark);}
   <div class="page" id="page-activiteiten">
     <div class="act-header">
       <h2 class="section-title">Activiteiten</h2>
-      <p class="section-sub">Plan, vink af en stel je dagagenda samen.</p>
+      <p class="section-sub">Zoek, plan en vink af.</p>
     </div>
     <div class="agenda-section">
       <div class="agenda-title">Dagagenda</div>
       <div id="agendaContent"><p class="agenda-empty">Nog geen activiteiten ingepland &mdash; klik op &ldquo;+ Inplannen op datum&rdquo; bij een activiteit.</p></div>
     </div>
-    <div class="search-bar">
-      <input class="search-input" id="searchInput" type="text" placeholder="Zoek op naam, bestemming of categorie&hellip;" oninput="doSearch()" />
-      <button class="search-clear" onclick="clearSearch()">Wis filter</button>
+    <div class="search-section">
+      <div class="search-section-title">Activiteit zoeken</div>
+      <div class="search-section-hint">Typ iets zoals &ldquo;massage Bangkok&rdquo;, &ldquo;zeilen Koh Tao&rdquo; of &ldquo;kinderen Chiang Mai&rdquo; &mdash; de AI zoekt passende activiteiten voor jullie route.</div>
+      <div class="search-bar">
+        <input class="search-input" id="searchInput" type="text" placeholder="Zoek een activiteit&hellip;" />
+        <button class="search-btn" id="searchBtn" onclick="doSearch()">Zoeken &#8599;</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
     </div>
     <div class="filter-row" id="filterRow"></div>
     <div id="activitiesContainer"></div>
@@ -187,7 +208,7 @@ footer strong{color:var(--sand-dark);}
     </div>
   </div>
 </div>
-<footer><strong>Thailand 2025</strong> &middot; Familiereis &middot; Gemaakt met Claude</footer>
+<footer><strong>Thailand 2026</strong> &middot; Familiereis &middot; Gemaakt met Claude</footer>
 <script>
 const RATE=38;
 const segments=[
@@ -201,40 +222,40 @@ const segments=[
 {id:"bangkok2",name:"Bangkok (terug)",dates:"15 \u2013 18 aug",icon:"\u{1F3D9}",bg:"#FAECE7",color:"#8B3A15",desc:"Laatste inkopen, fine dining en vertrek naar huis.",days:["15 aug","16 aug","17 aug"]},
 ];
 const activities=[
-{id:"a01",seg:"bangkok1",name:"Muay Thai gevecht",desc:"Echt gevecht in Lumpini of Rajadamnern Stadium. Traditionele muziek, druk publiek, meerdere kampen op \xe9\xe9n avond. Boek kaartjes vooraf.",tags:["sport","must"],dur:"3 uur",teen:true},
-{id:"a02",seg:"bangkok1",name:"Fietstocht Co van Kessel",desc:"Klassieke Bangkok fietstocht door Chinatown en langs de khlongs. Vertrekt vroeg in de ochtend \u2014 ruim van tevoren boeken.",tags:["cultuur","natuur","must"],dur:"4\u20135 uur",teen:true},
+{id:"a01",seg:"bangkok1",name:"Muay Thai gevecht",desc:"Echt gevecht in Lumpini of Rajadamnern Stadium. Traditionele muziek, druk publiek, meerdere kampen op \xe9\xe9n avond.",tags:["sport","must"],dur:"3 uur",teen:true},
+{id:"a02",seg:"bangkok1",name:"Fietstocht Co van Kessel",desc:"Klassieke Bangkok fietstocht door Chinatown en langs de khlongs. Vertrekt vroeg \u2014 ruim van tevoren boeken.",tags:["cultuur","natuur","must"],dur:"4\u20135 uur",teen:true},
 {id:"a03",seg:"bangkok1",name:"Chao Phraya boottocht",desc:"Lokale expressboot of longtail langs de grote tempels en het koninklijk paleis.",tags:["cultuur","water"],dur:"2 uur",teen:true},
-{id:"a04",seg:"bangkok1",name:"Rooftopbar bij zonsondergang",desc:"Bangkok van bovenaf \u2014 Vertigo (Banyan Tree) of Sky Bar (Lebua). Reserveer een tafel vooraf.",tags:["cultuur"],dur:"2 uur",teen:false},
+{id:"a04",seg:"bangkok1",name:"Rooftopbar bij zonsondergang",desc:"Bangkok van bovenaf \u2014 Vertigo (Banyan Tree) of Sky Bar (Lebua). Reserveer vooraf.",tags:["cultuur"],dur:"2 uur",teen:false},
 {id:"a05",seg:"bangkok1",name:"Chinatown streetfood avond",desc:"Yaowarat Road: pad thai, dim sum, mango sticky rice. Gewoon lopen en proeven.",tags:["food","cultuur"],dur:"2\u20133 uur",teen:true},
 {id:"a06",seg:"bangkok1",name:"Wat Pho en Wat Arun",desc:"Liggende Boeddha (46m) en de Tempel van de Dageraad. Neem de veerboot voor Wat Arun.",tags:["cultuur"],dur:"3 uur",teen:false},
 {id:"a07",seg:"bangkok1",name:"Chatuchak Weekend Market",desc:"Grootste markt van Azi\xEB \u2014 15.000 kraampjes. Alleen in het weekend open.",tags:["cultuur","food"],dur:"3 uur",teen:true},
-{id:"b01",seg:"ayutthaya",name:"Tempelru\xEFnes per fiets",desc:"Langs Wat Mahathat (hoofd in boomwortels), Wat Phra Si Sanphet en meer. Vroeg vertrekken vanwege de hitte.",tags:["cultuur","natuur","must"],dur:"Hele dag",teen:true},
-{id:"b02",seg:"ayutthaya",name:"Rondrit per tuk-tuk",desc:"Chauffeur-tuk-tuk voor een comfortabele rondrit langs de hoofdtempels.",tags:["cultuur"],dur:"3\u20134 uur",teen:true},
-{id:"c01",seg:"chiangmai",name:"La Lanna Resort",desc:"Het signature schuifbed glijdt s ochtends automatisch van de slaapkamer naar het balkon. Prioriteit voor 1 nacht.",tags:["natuur","must"],dur:"1 nacht",teen:true},
+{id:"b01",seg:"ayutthaya",name:"Tempelru\xEFnes per fiets",desc:"Langs Wat Mahathat (hoofd in boomwortels) en Wat Phra Si Sanphet. Vroeg vertrekken.",tags:["cultuur","natuur","must"],dur:"Hele dag",teen:true},
+{id:"b02",seg:"ayutthaya",name:"Rondrit per tuk-tuk",desc:"Comfortabele rondrit langs alle hoofdtempels met chauffeur.",tags:["cultuur"],dur:"3\u20134 uur",teen:true},
+{id:"c01",seg:"chiangmai",name:"La Lanna Resort",desc:"Het signature schuifbed glijdt s ochtends automatisch naar het balkon. Prioriteit voor 1 nacht.",tags:["natuur","must"],dur:"1 nacht",teen:true},
 {id:"c02",seg:"chiangmai",name:"Ethisch olifantenreservaat",desc:"Hele dag voeren, verzorgen en naast olifanten lopen \u2014 geen rijden. Elephant Nature Park.",tags:["natuur","must","tieners"],dur:"Hele dag",teen:true},
 {id:"c03",seg:"chiangmai",name:"Bamboe rafting met olifanten",desc:"Tocht op bamboe vlotten terwijl olifanten in het water naast je lopen.",tags:["natuur","water","tieners"],dur:"Halve dag",teen:true},
-{id:"c04",seg:"chiangmai",name:"Grand Canyon Water Park",desc:"Waterpark in een oude steengroeve \u2014 glijbanen en obstacles. Populair bij tieners. Tickets vooraf boeken.",tags:["water","sport","tieners","must"],dur:"3\u20134 uur",teen:true},
-{id:"c05",seg:"chiangmai",name:"Thai kookcursus",desc:"Markt bezoeken en 4\u20135 gerechten koken. Thai Farm Cooking School is een goede optie.",tags:["food","cultuur"],dur:"Halve dag",teen:true},
+{id:"c04",seg:"chiangmai",name:"Grand Canyon Water Park",desc:"Waterpark in een oude steengroeve \u2014 glijbanen en obstacles. Tickets vooraf boeken.",tags:["water","sport","tieners","must"],dur:"3\u20134 uur",teen:true},
+{id:"c05",seg:"chiangmai",name:"Thai kookcursus",desc:"Markt bezoeken en 4\u20135 gerechten koken. Thai Farm Cooking School.",tags:["food","cultuur"],dur:"Halve dag",teen:true},
 {id:"c06",seg:"chiangmai",name:"Witte Tempel Chiang Rai",desc:"Wat Rong Khun \u2014 surrealistisch witte tempel met spiegelglas.",tags:["cultuur"],dur:"Halve dag",teen:true},
-{id:"c07",seg:"chiangmai",name:"Golden Triangle rondrit",desc:"Zelfrijdend door Chiang Rai, Mae Salong en het drielandenpunt Thailand\u2013Laos\u2013Myanmar.",tags:["cultuur","natuur"],dur:"1\u20132 dagen",teen:false},
+{id:"c07",seg:"chiangmai",name:"Golden Triangle rondrit",desc:"Zelfrijdend door Chiang Rai, Mae Salong en het drielandenpunt.",tags:["cultuur","natuur"],dur:"1\u20132 dagen",teen:false},
 {id:"c08",seg:"chiangmai",name:"Doi Inthanon nationaalpark",desc:"Hoogste berg van Thailand (2565m) met watervallen en koninklijke pagodes.",tags:["natuur"],dur:"Hele dag",teen:false},
-{id:"d01",seg:"khaosok",name:"Rondvaart Cheow Lan meer",desc:"Stuwmeer omgeven door kalkstenen rotsen. Boottocht langs grotten en drijvende lodges.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
-{id:"d02",seg:"khaosok",name:"Overnachten op het meer",desc:"Drijvende rafthouses \u2014 s avonds donker, s ochtends mist en gibbons in de verte.",tags:["natuur","must"],dur:"1 nacht",teen:true},
+{id:"d01",seg:"khaosok",name:"Rondvaart Cheow Lan meer",desc:"Stuwmeer tussen kalkstenen rotsen. Boottocht langs grotten en drijvende lodges.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
+{id:"d02",seg:"khaosok",name:"Overnachten op het meer",desc:"Drijvende rafthouses \u2014 s avonds donker, s ochtends mist en gibbons.",tags:["natuur","must"],dur:"1 nacht",teen:true},
 {id:"d03",seg:"khaosok",name:"Jungle trekking",desc:"Gids door het oerwoud \u2014 gibbons, vleesetende planten en watervallen.",tags:["natuur","sport"],dur:"Halve dag",teen:true},
 {id:"d04",seg:"khaosok",name:"Kajakken op het meer",desc:"Peddelen door inhammen tussen de kalkstenen rotsformaties.",tags:["water","sport","tieners"],dur:"2\u20133 uur",teen:true},
-{id:"e01",seg:"samui",name:"Angthong Marine Park",desc:"42 eilandjes \u2014 kajakken, snorkelen en smaragdgroene lagune. Een van de mooiste dagtrips vanuit Samui.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
-{id:"e02",seg:"samui",name:"Dagtocht Koh Tao snorkelen",desc:"Speedboot naar Koh Tao en Koh Nang Yuan. Snorkelen bij koraalriffen, lunch aan boord.",tags:["water","natuur"],dur:"Hele dag",teen:true},
-{id:"e03",seg:"samui",name:"Big Buddha bij zonsondergang",desc:"Groot gouden Boeddhabeeld op het noordpunt. Gratis toegang, mooi licht.",tags:["cultuur"],dur:"1 uur",teen:false},
-{id:"e04",seg:"samui",name:"Vissersmarkt Nathon",desc:"Lokale markt \u2014 vers fruit, vis en streetfood. Minder toeristisch dan Chaweng.",tags:["food","cultuur"],dur:"2 uur",teen:false},
-{id:"f01",seg:"kohtao",name:"PADI open water cursus",desc:"Volledige certificering voor de tieners (min. 10 jaar). 3\u20134 dagen, eindigt met zelfstandige duiken op het rif.",tags:["water","sport","must","tieners"],dur:"3\u20134 dagen",teen:true},
+{id:"e01",seg:"samui",name:"Angthong Marine Park",desc:"42 eilandjes \u2014 kajakken, snorkelen en smaragdgroene lagune.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
+{id:"e02",seg:"samui",name:"Dagtocht Koh Tao snorkelen",desc:"Speedboot naar Koh Tao en Koh Nang Yuan. Snorkelen bij koraalriffen.",tags:["water","natuur"],dur:"Hele dag",teen:true},
+{id:"e03",seg:"samui",name:"Big Buddha bij zonsondergang",desc:"Groot gouden Boeddhabeeld op het noordpunt. Gratis toegang.",tags:["cultuur"],dur:"1 uur",teen:false},
+{id:"e04",seg:"samui",name:"Vissersmarkt Nathon",desc:"Lokale markt \u2014 vers fruit, vis en streetfood. Minder toeristisch.",tags:["food","cultuur"],dur:"2 uur",teen:false},
+{id:"f01",seg:"kohtao",name:"PADI open water cursus",desc:"Volledige certificering voor de tieners (min. 10 jaar). 3\u20134 dagen.",tags:["water","sport","must","tieners"],dur:"3\u20134 dagen",teen:true},
 {id:"f02",seg:"kohtao",name:"Fun dives voor gecertificeerden",desc:"2\u20133 duiken op Chumphon Pinnacle, Southwest Pinnacle en Shark Island.",tags:["water","sport","must"],dur:"Hele dag",teen:true},
 {id:"f03",seg:"kohtao",name:"Snorkelen Shark Bay",desc:"Schildpadden spotten in ondiep water \u2014 bijna gegarandeerd. Geen boot nodig.",tags:["water","natuur","tieners"],dur:"2 uur",teen:true},
-{id:"f04",seg:"kohtao",name:"Zonsondergang viewpoint",desc:"Lopen of scooter huren naar het viewpoint op de westkant van het eiland.",tags:["natuur"],dur:"1 uur",teen:true},
-{id:"f05",seg:"kohtao",name:"Freediving introductie",desc:"Eendaagse intro. Populair op Koh Tao, goed te combineren met de PADI week.",tags:["water","sport","tieners"],dur:"1 dag",teen:true},
-{id:"g01",seg:"huahin",name:"Verkennen per fiets of scooter",desc:"Koninklijk zomerpaleis, oud treinstation en rustige stranden in eigen tempo.",tags:["cultuur","natuur"],dur:"Hele dag",teen:false},
-{id:"g02",seg:"huahin",name:"Nachtmarkt Hua Hin",desc:"Eten, kleding en souvenirs. Milder dan Bangkok, Thaise sfeer.",tags:["food","cultuur"],dur:"2 uur",teen:true},
+{id:"f04",seg:"kohtao",name:"Zonsondergang viewpoint",desc:"Scooter huren naar het viewpoint op de westkant \u2014 beste zonsondergang.",tags:["natuur"],dur:"1 uur",teen:true},
+{id:"f05",seg:"kohtao",name:"Freediving introductie",desc:"Eendaagse intro. Populair op Koh Tao, goed naast de PADI week.",tags:["water","sport","tieners"],dur:"1 dag",teen:true},
+{id:"g01",seg:"huahin",name:"Verkennen per fiets of scooter",desc:"Koninklijk zomerpaleis, oud treinstation en rustige stranden.",tags:["cultuur","natuur"],dur:"Hele dag",teen:false},
+{id:"g02",seg:"huahin",name:"Nachtmarkt Hua Hin",desc:"Eten, kleding en souvenirs. Milder dan Bangkok.",tags:["food","cultuur"],dur:"2 uur",teen:true},
 {id:"g03",seg:"huahin",name:"Dag op het strand",desc:"Lang en rustig strand. Perfect voor de laatste ontspanning.",tags:["natuur","water"],dur:"Hele dag",teen:true},
-{id:"h01",seg:"bangkok2",name:"Jim Thompson House",desc:"Teak houten villa van de Amerikaanse zijdehandelaar \u2014 mooie tuin en fascinerende geschiedenis.",tags:["cultuur"],dur:"2 uur",teen:false},
+{id:"h01",seg:"bangkok2",name:"Jim Thompson House",desc:"Teak villa van de Amerikaanse zijdehandelaar \u2014 mooie tuin en fascinerende geschiedenis.",tags:["cultuur"],dur:"2 uur",teen:false},
 {id:"h02",seg:"bangkok2",name:"MBK en Siam shopping",desc:"Laatste cadeaus \u2014 MBK voor elektronica, Siam Paragon voor internationale merken.",tags:["cultuur","tieners"],dur:"3 uur",teen:true},
 {id:"h03",seg:"bangkok2",name:"Fine dining afsluiting",desc:"Nahm, Bo.lan of Paste voor moderne Thai fine dining. Reserveer ruim van tevoren.",tags:["food","must"],dur:"2\u20133 uur",teen:false},
 {id:"h04",seg:"bangkok2",name:"Lumpini Park ochtendwandeling",desc:"Tai chi, varanen langs het water en rust voor de dag begint.",tags:["natuur"],dur:"1,5 uur",teen:false},
@@ -244,7 +265,7 @@ const storage={
   planned:JSON.parse(localStorage.getItem('th_planned')||'{}'),
   save(){localStorage.setItem('th_checked',JSON.stringify([...this.checked]));localStorage.setItem('th_planned',JSON.stringify(this.planned));}
 };
-let activeFilter='alle',searchQuery='',modalState={actId:null,selectedDate:null};
+let activeFilter='alle',modalState={actId:null,selectedDate:null};
 function showPage(p){
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
@@ -265,20 +286,13 @@ function renderFilters(){
   document.getElementById('filterRow').innerHTML=filters.map(f=>'<button class="filter-btn'+(f===activeFilter?' active':'')+'" onclick="setFilter(\''+f+'\')">'+labels[f]+'</button>').join('');
 }
 function setFilter(f){activeFilter=f;renderFilters();renderActivities();}
-function doSearch(){searchQuery=document.getElementById('searchInput').value.toLowerCase();renderActivities();}
-function clearSearch(){document.getElementById('searchInput').value='';searchQuery='';renderActivities();}
-function matchesSearch(a){
-  if(!searchQuery)return true;
-  const seg=segments.find(s=>s.id===a.seg);
-  return a.name.toLowerCase().includes(searchQuery)||a.desc.toLowerCase().includes(searchQuery)||a.tags.some(t=>tagLabel(t).toLowerCase().includes(searchQuery))||(seg&&seg.name.toLowerCase().includes(searchQuery));
-}
 function renderActivities(){
   document.getElementById('activitiesContainer').innerHTML=segments.map(seg=>{
     const acts=activities.filter(a=>{
       if(a.seg!==seg.id)return false;
       if(activeFilter==='tieners'){if(!a.teen)return false;}
       else if(activeFilter!=='alle'){if(!a.tags.includes(activeFilter))return false;}
-      return matchesSearch(a);
+      return true;
     });
     if(!acts.length)return '';
     return '<div class="segment-block segment-anchor" id="seg-'+seg.id+'"><div class="segment-header"><div class="seg-icon" style="background:'+seg.bg+'">'+seg.icon+'</div><div><div class="seg-name">'+seg.name+'</div><div class="seg-dates">'+seg.dates+'</div></div></div><div class="activities-grid">'+acts.map(a=>{
@@ -288,6 +302,42 @@ function renderActivities(){
   }).join('');
 }
 function toggleCheck(id){if(storage.checked.has(id))storage.checked.delete(id);else storage.checked.add(id);storage.save();renderActivities();}
+
+async function doSearch(){
+  const q=document.getElementById('searchInput').value.trim();
+  if(!q)return;
+  const btn=document.getElementById('searchBtn');
+  const res=document.getElementById('searchResults');
+  btn.disabled=true;btn.textContent='Bezig\u2026';
+  res.innerHTML='<div class="search-msg">AI zoekt activiteiten voor jullie route\u2026</div>';
+  try{
+    const r=await fetch('/.netlify/functions/search',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({query:q})
+    });
+    const data=await r.json();
+    if(!r.ok)throw new Error(data.error||'Fout');
+    res.innerHTML=data.map(s=>{
+      const segName=segments.find(sg=>sg.id===s.segment)?.name||s.segment;
+      return '<div class="search-result-card"><div class="src-top"><div class="src-name">'+s.name+'</div><button class="src-add" onclick=\'addActivity('+JSON.stringify(s).replace(/'/g,"&#39;")+')\'>+ Toevoegen</button></div><div class="src-meta">'+segName+' &middot; '+s.duration+'</div><div class="src-meta">'+s.desc+'</div>'+(s.tip?'<div class="src-tip">&#128204; '+s.tip+'</div>':'')+'</div>';
+    }).join('');
+  }catch(e){
+    res.innerHTML='<div class="search-msg">&#9888; '+e.message+'</div>';
+  }
+  btn.disabled=false;btn.textContent='Zoeken \u2197';
+}
+
+function addActivity(s){
+  const newId='custom_'+Date.now();
+  activities.push({id:newId,seg:s.segment,name:s.name,desc:s.desc+(s.tip?' '+s.tip:''),tags:s.tags||[],dur:s.duration||'',teen:(s.tags||[]).includes('tieners')});
+  renderActivities();
+  document.getElementById('searchResults').innerHTML='<div class="search-msg">&#10003; '+s.name+' toegevoegd!</div>';
+  setTimeout(()=>{document.getElementById('searchResults').innerHTML='';},2500);
+}
+
+document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
+
 function openModal(actId){
   const act=activities.find(a=>a.id===actId);
   const seg=segments.find(s=>s.id===act.seg);
@@ -304,7 +354,7 @@ function renderAgenda(){
   const entries=Object.entries(storage.planned);
   if(!entries.length){document.getElementById('agendaContent').innerHTML='<p class="agenda-empty">Nog geen activiteiten ingepland \u2014 klik op &ldquo;+ Inplannen op datum&rdquo; bij een activiteit.</p>';return;}
   const byDate={};
-  entries.forEach(([id,date])=>{const act=activities.find(a=>a.id===id);const seg=segments.find(s=>s.id===act.seg);if(!byDate[date])byDate[date]=[];byDate[date].push({act,seg});});
+  entries.forEach(([id,date])=>{const act=activities.find(a=>a.id===id);if(!act)return;const seg=segments.find(s=>s.id===act.seg);if(!byDate[date])byDate[date]=[];byDate[date].push({act,seg});});
   const mn={jul:7,aug:8};
   const pd=s=>{const[d,m]=s.split(' ');return mn[m]*100+parseInt(d);};
   const sorted=Object.keys(byDate).sort((a,b)=>pd(a)-pd(b));
