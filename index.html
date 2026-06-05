@@ -122,11 +122,6 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .plan-btn{font-size:12px;padding:4px 10px;border-radius:10px;border:1px solid var(--green);color:var(--green);background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;width:100%;transition:all 0.15s;}
 .plan-btn:hover{background:var(--green);color:var(--white);}
 .plan-btn.has-date{background:#EAF2EC;border-color:var(--green);color:#2d5040;font-weight:500;}
-.acts-section-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin:1rem 0 0.6rem;padding:4px 10px;border-radius:20px;display:inline-block;}
-.planned-label{background:#EAF2EC;color:#2d5040;}
-.options-label{background:#F5EDD8;color:#8B3A15;}
-.planned-grid .act-card{border-color:var(--green);border-width:1.5px;background:#FAFFFE;}
-.planned-grid{margin-bottom:0.5rem;}
 
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;display:flex;align-items:center;justify-content:center;}
@@ -155,6 +150,23 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .conv-input:focus{background:rgba(255,255,255,0.18);}
 .conv-label{font-size:15px;font-weight:500;color:var(--sand-dark);min-width:48px;}
 .conv-rate{font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;text-align:right;}
+.acts-section-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;margin:1rem 0 0.6rem;padding:4px 12px;border-radius:20px;display:inline-block;}
+.planned-label{background:#EAF2EC;color:#2d5040;}
+.options-label{background:#F5EDD8;color:#8B3A15;}
+.planned-grid .act-card{border-color:var(--green);border-width:1.5px;background:#FAFFFE;}
+.planned-grid{margin-bottom:0.5rem;}
+.mini-agenda{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius);padding:1rem 1.25rem;margin-bottom:1.25rem;}
+.mini-agenda-title{font-size:12px;font-weight:600;color:var(--terra-dark);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.75rem;}
+.mini-day{display:flex;align-items:flex-start;gap:12px;padding:6px 0;border-bottom:1px solid var(--sand-dark);}
+.mini-day:last-child{border-bottom:none;}
+.mini-day-label{font-size:13px;font-weight:500;color:var(--text-muted);min-width:52px;padding-top:3px;}
+.mini-day-acts{flex:1;display:flex;flex-direction:column;gap:4px;}
+.mini-day-act{display:flex;align-items:center;gap:8px;background:#EAF2EC;border-radius:8px;padding:4px 10px;}
+.mini-act-name{font-size:13px;font-weight:500;color:var(--green);flex:1;}
+.mini-act-price{font-size:12px;color:var(--text-muted);}
+.mini-act-remove{background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:11px;padding:0 2px;}
+.mini-act-remove:hover{color:var(--terra);}
+.mini-day-empty{font-size:12px;color:#ccc;font-style:italic;padding-top:3px;}
 footer{background:var(--terra-dark);padding:2rem;text-align:center;color:rgba(255,255,255,0.35);font-size:13px;}
 footer strong{color:var(--sand-dark);}
 @media(max-width:640px){.route-grid{grid-template-columns:1fr;}.form-row{flex-direction:column;}.hero-stats{gap:1.25rem;padding:0.75rem 1.25rem;}}
@@ -196,10 +208,7 @@ footer strong{color:var(--sand-dark);}
       <p class="section-sub">Plan, vink af en voeg toe.</p>
     </div>
 
-    <div class="agenda-section">
-      <div class="agenda-title">&#128197; Dagagenda</div>
-      <div id="agendaContent"><p class="agenda-empty">Nog geen activiteiten ingepland.</p></div>
-    </div>
+    
 
     <div class="add-section">
       <div class="add-title">Activiteit toevoegen</div>
@@ -240,10 +249,7 @@ footer strong{color:var(--sand-dark);}
       <div class="form-group">
         <label class="form-label">Kosten (optioneel)</label>
         <div class="price-row">
-          <select class="price-select" id="manPriceCurrency" style="max-width:80px;">
-            <option value="eur">&#8364;</option>
-            <option value="thb">&#3647;</option>
-          </select>
+          <span style="color:rgba(255,255,255,0.7);font-size:15px;">&#8364;</span>
           <input class="price-input" id="manPrice" type="number" placeholder="0" min="0" />
           <select class="price-select" id="manPriceType">
             <option value="pp">per persoon</option>
@@ -254,12 +260,8 @@ footer strong{color:var(--sand-dark);}
 
       <div class="form-group">
         <label class="form-label">Foto (optioneel)</label>
-        <div style="display:flex;gap:8px;">
-          <label class="photo-upload" for="manPhoto" style="flex:1;">&#128247; Galerij</label>
-          <label class="photo-upload" for="manCamera" style="flex:1;">&#128249; Camera</label>
-        </div>
-        <input type="file" id="manPhoto" accept="image/*" style="display:none" onchange="previewPhoto('manPhoto')" />
-        <input type="file" id="manCamera" accept="image/*" capture="environment" style="display:none" onchange="previewPhoto('manCamera')" />
+        <label class="photo-upload" for="manPhoto">&#128247; Klik om een foto te kiezen</label>
+        <input type="file" id="manPhoto" accept="image/*" style="display:none" onchange="previewPhoto()" />
         <img class="photo-preview" id="photoPreview" />
       </div>
 
@@ -315,7 +317,7 @@ const RATE=38;
 const segments=[
 {id:"bangkok1",name:"Bangkok",dates:"24\u201328 juli",icon:"\uD83C\uDFD9",bg:"#FAECE7",color:"#8B3A15",desc:"Aankomst, Muay Thai gevecht en fietstocht met Co van Kessel.",days:["24 jul","25 jul","26 jul","27 jul"]},
 {id:"ayutthaya",name:"Ayutthaya",dates:"28 juli (dagtrip)",icon:"\uD83D\uDED5",bg:"#F5EDD8",color:"#6B4226",desc:"Dagtrip naar de oude hoofdstad met tempelru\xEFnes.",days:["28 jul"]},
-{id:"chiangmai",name:"Chiang Mai & omgeving",dates:"30 juli\u20133 aug",icon:"\uD83C\uDF3F",bg:"#EAF2EC",color:"#3D6B4F",desc:"Jungle, olifanten, Grand Canyon Water Park en La Lanna Resort.",days:["30 jul","31 jul","1 aug","2 aug"]},
+{id:"chiangmai",name:"Chiang Mai",dates:"30 juli\u20133 aug",icon:"\uD83C\uDF3F",bg:"#EAF2EC",color:"#3D6B4F",desc:"Jungle, olifanten, Grand Canyon Water Park en La Lanna Resort.",days:["30 jul","31 jul","1 aug","2 aug"]},
 {id:"khaosok",name:"Khao Sok",dates:"3\u20135 aug",icon:"\uD83E\uDD9C",bg:"#EAF3DE",color:"#27500A",desc:"Jungle nationaalpark met stuwmeer, grotten en wildlife.",days:["3 aug","4 aug"]},
 {id:"samui",name:"Koh Samui",dates:"5\u20139 aug",icon:"\uD83C\uDF34",bg:"#E6F1FB",color:"#185FA5",desc:"Eilandbasecamp \u2014 strand en Angthong Marine Park.",days:["5 aug","6 aug","7 aug","8 aug"]},
 {id:"kohtao",name:"Koh Tao",dates:"9\u201313 aug",icon:"\uD83E\uDD3F",bg:"#E1F5EE",color:"#0F6E56",desc:"Duikparadijs \u2014 PADI cursus voor de tieners en fun dives.",days:["9 aug","10 aug","11 aug","12 aug"]},
@@ -364,8 +366,7 @@ const defaultActivities=[
 ];
 
 const customActivities=JSON.parse(localStorage.getItem('th_custom')||'[]');
-const deletedIds=new Set(JSON.parse(localStorage.getItem('th_deleted')||'[]'));
-let activities=[...defaultActivities.filter(a=>!deletedIds.has(a.id)),...customActivities];
+let activities=[...defaultActivities,...customActivities];
 const storage={
   checked:new Set(JSON.parse(localStorage.getItem('th_checked')||'[]')),
   planned:JSON.parse(localStorage.getItem('th_planned')||'{}'),
@@ -400,8 +401,8 @@ function buildTagToggles(containerId,prefix){
 function toggleTag(prefix,t){document.getElementById(prefix+'_'+t).classList.toggle('on');}
 function getSelectedTags(prefix){return allTags.filter(t=>document.getElementById(prefix+'_'+t)?.classList.contains('on'));}
 
-function previewPhoto(inputId){
-  const file=document.getElementById(inputId||'manPhoto').files[0];
+function previewPhoto(){
+  const file=document.getElementById('manPhoto').files[0];
   if(!file)return;
   const reader=new FileReader();
   reader.onload=e=>{
@@ -418,7 +419,6 @@ function addManual(){
   if(!name){alert('Vul een naam in');return;}
   const priceVal=document.getElementById('manPrice').value;
   const priceType=document.getElementById('manPriceType').value;
-  const priceCurrency=document.getElementById('manPriceCurrency').value;
   const photoSrc=document.getElementById('photoPreview').src;
   const date=document.getElementById('manDate').value;
   const act={
@@ -429,7 +429,7 @@ function addManual(){
     url:document.getElementById('manUrl').value.trim(),
     tags:getSelectedTags('man'),
     dur:document.getElementById('manDur').value.trim(),
-    price:priceVal?{amount:parseFloat(priceVal),type:priceType,currency:priceCurrency}:null,
+    price:priceVal?{amount:parseFloat(priceVal),type:priceType}:null,
     photo:photoSrc&&photoSrc.startsWith('data:')?photoSrc:null,
     teen:getSelectedTags('man').includes('tieners'),
     custom:true
@@ -445,8 +445,7 @@ function addManual(){
   ['manName','manDesc','manUrl','manDur','manPrice'].forEach(id=>{document.getElementById(id).value='';});
   document.getElementById('manDate').value='';
   document.getElementById('photoPreview').style.display='none';
-  document.getElementById('manCamera').value='';
-  document.querySelectorAll('.photo-upload').forEach(el=>{el.textContent=el.textContent.includes('Gal')?'\uD83D\uDCF7 Galerij':'\uD83D\uDCF9 Camera';});
+  document.querySelector('.photo-upload').textContent='\uD83D\uDCF7 Klik om een foto te kiezen';
   allTags.forEach(t=>{const b=document.getElementById('man_'+t);if(b)b.classList.remove('on');});
   alert('\u2713 '+name+' toegevoegd!');
 }
@@ -454,14 +453,10 @@ function addManual(){
 function deleteActivity(id){
   if(!confirm('Activiteit verwijderen?'))return;
   activities=activities.filter(a=>a.id!==id);
-  // Save custom activities
-  const savedCustom=JSON.parse(localStorage.getItem('th_custom')||'[]').filter(a=>a.id!==id);
-  localStorage.setItem('th_custom',JSON.stringify(savedCustom));
-  // Also track deleted default activity ids so they stay gone after reload
-  const deleted=JSON.parse(localStorage.getItem('th_deleted')||'[]');
-  if(!deleted.includes(id)){deleted.push(id);localStorage.setItem('th_deleted',JSON.stringify(deleted));}
+  const saved=JSON.parse(localStorage.getItem('th_custom')||'[]').filter(a=>a.id!==id);
+  localStorage.setItem('th_custom',JSON.stringify(saved));
   delete storage.planned[id];storage.checked.delete(id);storage.save();
-  renderActivities();renderAgenda();renderRoute();
+  renderActivities();renderAgenda();
 }
 
 function renderRoute(){
@@ -491,51 +486,72 @@ function priceLabel(price){
   return `\u20AC${eur} ${price.type==='pp'?'p.p.':'totaal'} (\u00B1\u0E3F${baht})`;
 }
 
+function makeCard(a){
+  var planned=storage.planned[a.id];
+  var chk=storage.checked.has(a.id);
+  var cls='act-card'+(chk?' done':'')+(planned?' planned':'')+(a.custom?' custom':'');
+  var del_btn='<div class="act-del" onclick="deleteActivity(\x27'+a.id+'\x27)" title="Verwijderen">&#x2715;</div>';
+  var chk_btn='<div class="act-check'+(chk?' checked':'')+'" onclick="toggleCheck(\x27'+a.id+'\x27)" title="Afvinken"><svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>';
+  var tags=a.tags.map(function(t){return '<span class="tag tag-'+t+'">'+tagLabels[t]+'</span>';}).join('');
+  var plan_btn='<button class="plan-btn'+(planned?' has-date':'')+'" onclick="openModal(\x27'+a.id+'\x27)">'+(planned?'&#128197; '+planned+' &middot; wijzig':'+ Inplannen op datum')+'</button>';
+  var body='<div class="act-top"><div class="act-name">'+a.name+'</div><div class="act-actions">'+del_btn+chk_btn+'</div></div>';
+  if(a.desc)body+='<div class="act-desc">'+a.desc+'</div>';
+  if(a.price)body+='<div class="act-price">&#128176; '+priceLabel(a.price)+'</div>';
+  if(a.url)body+='<a class="act-link" href="'+a.url+'" target="_blank">&#128279; Bekijk website</a>';
+  body+='<div class="act-footer"><div class="act-tags">'+tags+'</div>'+(a.dur?'<div class="act-duration">&#9201; '+a.dur+'</div>':'')+'</div>';
+  body+=plan_btn;
+  return '<div class="'+cls+'">'+(a.photo?'<img class="act-photo" src="'+a.photo+'" alt="'+a.name+'" />':'')+'<div class="act-body">'+body+'</div></div>';
+}
+
+function makeMiniAgenda(seg){
+  var h='<div class="mini-agenda"><div class="mini-agenda-title">&#128197; Planning</div>';
+  seg.days.forEach(function(day){
+    var acts=activities.filter(function(a){return a.seg===seg.id && storage.planned[a.id]===day;});
+    h+='<div class="mini-day"><div class="mini-day-label">'+day+'</div>';
+    if(acts.length){
+      h+='<div class="mini-day-acts">';
+      acts.forEach(function(a){
+        h+='<div class="mini-day-act"><span class="mini-act-name">'+a.name+'</span>'+(a.price?'<span class="mini-act-price">&#128176; '+priceLabel(a.price)+'</span>':'')+'<button class="mini-act-remove" onclick="removePlan(\x27'+a.id+'\x27)">&#x2715;</button></div>';
+      });
+      h+='</div>';
+    } else {
+      h+='<div class="mini-day-empty">Nog niets gepland</div>';
+    }
+    h+='</div>';
+  });
+  h+='</div>';
+  return h;
+}
+
 function renderActivities(){
-  document.getElementById('activitiesContainer').innerHTML=segments.map(seg=>{
-    const acts=activities.filter(a=>{
+  var mn={jul:7,aug:8};
+  var pd=function(s){var p=s.split(' ');return mn[p[1]]*100+parseInt(p[0]);};
+  document.getElementById('activitiesContainer').innerHTML=segments.map(function(seg){
+    var acts=activities.filter(function(a){
       if(a.seg!==seg.id)return false;
-      if(activeFilter==='tieners')return a.teen;
+      if(activeFilter==='tieners')return !!a.teen;
       if(activeFilter!=='alle')return a.tags.includes(activeFilter);
       return true;
     });
     if(!acts.length)return '';
-    return `<div class="segment-block segment-anchor" id="seg-${seg.id}">
-      <div class="segment-header">
-        <div class="seg-icon" style="background:${seg.bg}">${seg.icon}</div>
-        <div><div class="seg-name">${seg.name}</div><div class="seg-dates">${seg.dates}</div></div>
-      </div>
-      <div class="activities-grid">${acts.map(a=>{
-        const planned=storage.planned[a.id];
-        return `<div class="act-card${storage.checked.has(a.id)?' done':''}${planned?' planned':''}${a.custom?' custom':''}">
-          ${a.photo?`<img class="act-photo" src="${a.photo}" alt="${a.name}" />`:''}
-          <div class="act-body">
-            <div class="act-top">
-              <div class="act-name">${a.name}</div>
-              <div class="act-actions">
-                <div class="act-del" onclick="deleteActivity('${a.id}')" title="Verwijderen">&#x2715;</div>
-                <div class="act-check${storage.checked.has(a.id)?' checked':''}" onclick="toggleCheck('${a.id}')" title="Afvinken">
-                  <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-              </div>
-            </div>
-            ${a.desc?`<div class="act-desc">${a.desc}</div>`:''}
-            ${a.price?`<div class="act-price">\uD83D\uDCB0 ${priceLabel(a.price)}</div>`:''}
-            ${a.url?`<a class="act-link" href="${a.url}" target="_blank">\uD83D\uDD17 Bekijk website</a>`:''}
-            <div class="act-footer">
-              <div class="act-tags">${a.tags.map(t=>`<span class="tag tag-${t}">${tagLabels[t]}</span>`).join('')}</div>
-              ${a.dur?`<div class="act-duration">\u23F1 ${a.dur}</div>`:''}
-            </div>
-            <button class="plan-btn${planned?' has-date':''}" onclick="openModal('${a.id}')">
-              ${planned?'\uD83D\uDCC5 '+planned+' · wijzig':'+ Inplannen op datum'}
-            </button>
-          </div>
-        </div>`;
-      }).join('')}</div>
-    </div>`;
+    var planned=acts.filter(function(a){return !!storage.planned[a.id];}).sort(function(a,b){return pd(storage.planned[a.id])-pd(storage.planned[b.id]);});
+    var options=acts.filter(function(a){return !storage.planned[a.id];});
+    var h='<div class="segment-block segment-anchor" id="seg-'+seg.id+'">';
+    h+='<div class="segment-header"><div class="seg-icon" style="background:'+seg.bg+'">'+seg.icon+'</div>';
+    h+='<div><div class="seg-name">'+seg.name+'</div><div class="seg-dates">'+seg.dates+'</div></div></div>';
+    h+=makeMiniAgenda(seg);
+    if(planned.length){
+      h+='<div class="acts-section-label planned-label">&#x2705; Ingepland &mdash; '+planned.length+' activiteit'+(planned.length>1?'en':'')+'</div>';
+      h+='<div class="activities-grid planned-grid">'+planned.map(function(a){return makeCard(a);}).join('')+'</div>';
+    }
+    if(options.length){
+      h+='<div class="acts-section-label options-label">&#128161; Opties &mdash; '+options.length+' activiteit'+(options.length>1?'en':'')+'</div>';
+      h+='<div class="activities-grid">'+options.map(function(a){return makeCard(a);}).join('')+'</div>';
+    }
+    h+='</div>';
+    return h;
   }).join('');
 }
-
 function toggleCheck(id){if(storage.checked.has(id))storage.checked.delete(id);else storage.checked.add(id);storage.save();renderActivities();}
 
 function openModal(actId){
