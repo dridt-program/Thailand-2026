@@ -27,6 +27,8 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .page{display:none;}.page.active{display:block;}
 .section-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:600;color:var(--terra-dark);margin-bottom:0.25rem;}
 .section-sub{font-size:14px;color:var(--text-muted);margin-bottom:1.5rem;}
+
+/* ROUTE */
 .route-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:2.5rem 0 4rem;}
 .route-card{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
 .route-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--terra);border-radius:4px 0 0 4px;}
@@ -37,7 +39,8 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .rc-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;}
 .rc-desc{font-size:13px;color:var(--text-muted);line-height:1.5;}
 .rc-count{margin-top:10px;font-size:12px;color:var(--terra);font-weight:500;}
-.act-header{padding:2.5rem 0 0;}
+
+/* AGENDA */
 .agenda-section{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;}
 .agenda-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--terra-dark);margin-bottom:1rem;}
 .agenda-day{margin-bottom:1rem;}
@@ -48,25 +51,30 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .agenda-remove:hover{border-color:var(--terra-light);color:var(--terra);}
 .agenda-empty{font-size:13px;color:var(--text-muted);font-style:italic;}
 
-.search-section{background:var(--green);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;}
-.search-section-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--sand);margin-bottom:0.25rem;}
-.search-section-hint{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:1rem;}
-.search-bar{display:flex;gap:10px;}
-.search-input{flex:1;padding:11px 16px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:15px;background:rgba(255,255,255,0.95);color:var(--text);outline:none;}
-.search-input:focus{background:var(--white);}
-.search-btn{padding:11px 20px;background:var(--terra);color:var(--white);border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;}
-.search-btn:hover{background:var(--terra-dark);}
-.search-btn:disabled{opacity:0.6;cursor:not-allowed;}
-.search-results{margin-top:1rem;display:flex;flex-direction:column;gap:10px;}
-.search-result-card{background:rgba(255,255,255,0.95);border-radius:var(--radius);padding:1rem 1.25rem;}
-.src-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:6px;}
-.src-name{font-weight:500;font-size:15px;color:var(--text);}
-.src-add{background:var(--terra);color:var(--white);border:none;border-radius:8px;padding:6px 14px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;flex-shrink:0;}
-.src-add:hover{background:var(--terra-dark);}
-.src-meta{font-size:13px;color:var(--text-muted);margin-bottom:4px;}
-.src-tip{font-size:12px;color:var(--green);font-style:italic;}
-.search-msg{color:rgba(255,255,255,0.7);font-size:14px;font-style:italic;padding:0.5rem 0;}
+/* TOEVOEGEN PANEEL */
+.add-section{background:var(--green);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;}
+.add-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--sand);margin-bottom:0.25rem;}
+.add-sub{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:1.25rem;}
+.add-tabs{display:flex;gap:8px;margin-bottom:1.25rem;}
+.add-tab{padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;}
+.add-tab.active{background:rgba(255,255,255,0.15);color:var(--sand);border-color:rgba(255,255,255,0.5);}
+.add-panel{display:none;}.add-panel.active{display:block;}
+.form-row{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+.form-input{flex:1;min-width:180px;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;}
+.form-input:focus{background:var(--white);}
+.form-select{flex:1;min-width:180px;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;cursor:pointer;}
+.form-textarea{width:100%;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;resize:vertical;min-height:80px;margin-bottom:10px;}
+.tags-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.tag-toggle{padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;}
+.tag-toggle.on{background:var(--terra);border-color:var(--terra);color:var(--white);}
+.add-btn{padding:10px 24px;background:var(--terra);color:var(--white);border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;}
+.add-btn:hover{background:var(--terra-dark);}
+.url-row{display:flex;gap:10px;margin-bottom:10px;}
+.url-fetch-btn{padding:10px 18px;background:rgba(255,255,255,0.15);color:var(--sand);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;white-space:nowrap;}
+.url-fetch-btn:hover{background:rgba(255,255,255,0.25);}
+.url-status{font-size:13px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:8px;}
 
+/* FILTER & ACTIVITEITEN */
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem;}
 .filter-btn{padding:6px 16px;border-radius:20px;border:1px solid var(--sand-dark);background:var(--white);color:var(--text-muted);font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;}
 .filter-btn.active{background:var(--terra);border-color:var(--terra);color:var(--white);font-weight:500;}
@@ -77,13 +85,23 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .seg-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;}
 .seg-dates{font-size:13px;color:var(--text-muted);}
 .activities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
-.act-card{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius);padding:1rem;transition:border-color 0.2s;}
+.act-card{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius);padding:1rem;transition:border-color 0.2s;position:relative;}
 .act-card:hover{border-color:var(--terra-light);}
 .act-card.done{opacity:0.45;}
 .act-card.planned{border-color:var(--green);border-width:1.5px;}
+.act-card.custom{border-left:3px solid var(--green);}
 .act-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;}
 .act-name{font-weight:500;font-size:15px;line-height:1.3;}
+.act-actions{display:flex;gap:6px;flex-shrink:0;}
+.act-check{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sand-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--white);}
+.act-check.checked{background:var(--green);border-color:var(--green);}
+.act-check svg{display:none;}
+.act-check.checked svg{display:block;}
+.act-del{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sand-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--white);font-size:11px;color:var(--text-muted);}
+.act-del:hover{border-color:#e57373;color:#e57373;}
 .act-desc{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:8px;}
+.act-link{font-size:12px;color:var(--green);text-decoration:none;display:inline-block;margin-bottom:6px;}
+.act-link:hover{text-decoration:underline;}
 .act-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;}
 .act-tags{display:flex;gap:4px;flex-wrap:wrap;}
 .tag{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:500;}
@@ -94,14 +112,12 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .tag-sport{background:#FAECE7;color:#712B13;}
 .tag-tieners{background:#FBEAF0;color:#72243E;}
 .tag-must{background:var(--terra);color:var(--white);}
-.act-check{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sand-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--white);}
-.act-check.checked{background:var(--green);border-color:var(--green);}
-.act-check svg{display:none;}
-.act-check.checked svg{display:block;}
 .act-duration{font-size:12px;color:var(--text-muted);}
 .plan-btn{font-size:12px;padding:4px 10px;border-radius:10px;border:1px solid var(--green);color:var(--green);background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;width:100%;transition:all 0.15s;}
 .plan-btn:hover{background:var(--green);color:var(--white);}
 .plan-btn.has-date{background:#EAF2EC;border-color:var(--green);color:#2d5040;font-weight:500;}
+
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;display:flex;align-items:center;justify-content:center;}
 .modal-overlay.hidden{display:none;}
 .modal{background:var(--white);border-radius:var(--radius-lg);padding:1.5rem;width:340px;max-width:92vw;}
@@ -116,6 +132,8 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .modal-btn.confirm{background:var(--terra);color:var(--white);font-weight:500;}
 .modal-btn.confirm:hover{background:var(--terra-dark);}
 .modal-btn.cancel{background:var(--sand);color:var(--text);}
+
+/* CONVERTER */
 .converter-section{background:var(--terra-dark);border-radius:var(--radius-lg);padding:2rem;margin:1rem 0 4rem;display:flex;flex-wrap:wrap;gap:2rem;align-items:center;}
 .conv-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--sand);margin-bottom:0.25rem;}
 .conv-sub{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;}
@@ -128,7 +146,7 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .conv-rate{font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;text-align:right;}
 footer{background:var(--terra-dark);padding:2rem;text-align:center;color:rgba(255,255,255,0.35);font-size:13px;}
 footer strong{color:var(--sand-dark);}
-@media(max-width:640px){.route-grid{grid-template-columns:1fr;}.search-bar{flex-direction:column;}.hero-stats{gap:1.25rem;padding:0.75rem 1.25rem;}}
+@media(max-width:640px){.route-grid{grid-template-columns:1fr;}.form-row{flex-direction:column;}.url-row{flex-direction:column;}.hero-stats{gap:1.25rem;padding:0.75rem 1.25rem;}}
 </style>
 </head>
 <body>
@@ -140,6 +158,7 @@ footer strong{color:var(--sand-dark);}
   </div>
   <span class="nav-right"><a href="#" onclick="showPage('activiteiten');setTimeout(()=>document.getElementById('omrekenen').scrollIntoView({behavior:'smooth'}),80);return false;">Baht &#8594; &#8364;</a></span>
 </nav>
+
 <div class="hero">
   <div class="hero-eyebrow">Familiereis &middot; Juli &ndash; Augustus 2026</div>
   <h1>Thailand<br>met z&apos;n vijven</h1>
@@ -150,7 +169,9 @@ footer strong{color:var(--sand-dark);}
     <div class="hero-stat"><span class="num">5</span><span class="lbl">reizigers</span></div>
   </div>
 </div>
+
 <div class="container">
+  <!-- ROUTE PAGE -->
   <div class="page active" id="page-route">
     <div style="padding:2.5rem 0 0.5rem;">
       <h2 class="section-title">De route</h2>
@@ -158,26 +179,67 @@ footer strong{color:var(--sand-dark);}
     </div>
     <div class="route-grid" id="routeGrid"></div>
   </div>
+
+  <!-- ACTIVITEITEN PAGE -->
   <div class="page" id="page-activiteiten">
-    <div class="act-header">
+    <div style="padding:2.5rem 0 0;">
       <h2 class="section-title">Activiteiten</h2>
-      <p class="section-sub">Zoek, plan en vink af.</p>
+      <p class="section-sub">Plan, vink af en voeg toe.</p>
     </div>
+
+    <!-- DAGAGENDA -->
     <div class="agenda-section">
-      <div class="agenda-title">Dagagenda</div>
-      <div id="agendaContent"><p class="agenda-empty">Nog geen activiteiten ingepland &mdash; klik op &ldquo;+ Inplannen op datum&rdquo; bij een activiteit.</p></div>
+      <div class="agenda-title">&#128197; Dagagenda</div>
+      <div id="agendaContent"><p class="agenda-empty">Nog geen activiteiten ingepland &mdash; klik op &ldquo;+ Inplannen&rdquo; bij een activiteit.</p></div>
     </div>
-    <div class="search-section">
-      <div class="search-section-title">Activiteit zoeken</div>
-      <div class="search-section-hint">Typ iets zoals &ldquo;massage Bangkok&rdquo;, &ldquo;zeilen Koh Tao&rdquo; of &ldquo;kinderen Chiang Mai&rdquo; &mdash; de AI zoekt passende activiteiten voor jullie route.</div>
-      <div class="search-bar">
-        <input class="search-input" id="searchInput" type="text" placeholder="Zoek een activiteit&hellip;" />
-        <button class="search-btn" id="searchBtn" onclick="doSearch()">Zoeken &#8599;</button>
+
+    <!-- TOEVOEGEN -->
+    <div class="add-section">
+      <div class="add-title">Activiteit toevoegen</div>
+      <div class="add-sub">Plak een link van TripAdvisor of GetYourGuide, of vul zelf in.</div>
+      <div class="add-tabs">
+        <button class="add-tab active" onclick="switchAddTab('url')">&#128279; Via URL</button>
+        <button class="add-tab" onclick="switchAddTab('manual')">&#9998; Zelf invullen</button>
       </div>
-      <div class="search-results" id="searchResults"></div>
+
+      <!-- URL TAB -->
+      <div class="add-panel active" id="panel-url">
+        <div class="url-row">
+          <input class="form-input" id="urlInput" type="url" placeholder="Plak hier een URL (TripAdvisor, GetYourGuide, etc.)" />
+          <button class="url-fetch-btn" onclick="fetchUrl()">Ophalen</button>
+        </div>
+        <div class="url-status" id="urlStatus"></div>
+        <div id="urlForm" style="display:none;">
+          <input class="form-input" id="urlName" type="text" placeholder="Naam activiteit" style="width:100%;margin-bottom:10px;" />
+          <textarea class="form-textarea" id="urlDesc" placeholder="Beschrijving"></textarea>
+          <div class="form-row">
+            <select class="form-select" id="urlSeg"></select>
+            <input class="form-input" id="urlDur" type="text" placeholder="Duur (bv. 3 uur)" />
+          </div>
+          <div class="tags-row" id="urlTags"></div>
+          <input class="form-input" id="urlHref" type="hidden" />
+          <button class="add-btn" onclick="addFromUrl()">+ Toevoegen aan lijst</button>
+        </div>
+      </div>
+
+      <!-- HANDMATIG TAB -->
+      <div class="add-panel" id="panel-manual">
+        <input class="form-input" id="manName" type="text" placeholder="Naam activiteit" style="width:100%;margin-bottom:10px;" />
+        <textarea class="form-textarea" id="manDesc" placeholder="Beschrijving (optioneel)"></textarea>
+        <div class="form-row">
+          <select class="form-select" id="manSeg"></select>
+          <input class="form-input" id="manDur" type="text" placeholder="Duur (bv. 2 uur)" />
+        </div>
+        <div class="tags-row" id="manTags"></div>
+        <button class="add-btn" onclick="addManual()">+ Toevoegen aan lijst</button>
+      </div>
     </div>
+
+    <!-- FILTER -->
     <div class="filter-row" id="filterRow"></div>
     <div id="activitiesContainer"></div>
+
+    <!-- CONVERTER -->
     <div class="converter-section" id="omrekenen">
       <div style="flex:1;min-width:200px;">
         <div class="conv-title">Baht &#8596; Euro</div>
@@ -197,6 +259,8 @@ footer strong{color:var(--sand-dark);}
     </div>
   </div>
 </div>
+
+<!-- DATUM MODAL -->
 <div class="modal-overlay hidden" id="modalOverlay">
   <div class="modal">
     <div class="modal-title" id="modalTitle">Activiteit inplannen</div>
@@ -208,64 +272,79 @@ footer strong{color:var(--sand-dark);}
     </div>
   </div>
 </div>
+
 <footer><strong>Thailand 2026</strong> &middot; Familiereis &middot; Gemaakt met Claude</footer>
+
 <script>
 const RATE=38;
 const segments=[
-{id:"bangkok1",name:"Bangkok",dates:"24 \u2013 28 juli",icon:"\u{1F3D9}",bg:"#FAECE7",color:"#8B3A15",desc:"Aankomst, acclimatiseren, Muay Thai gevecht en fietstocht met Co van Kessel.",days:["24 jul","25 jul","26 jul","27 jul"]},
-{id:"ayutthaya",name:"Ayutthaya",dates:"28 juli (dagtrip)",icon:"\u{1F6D5}",bg:"#F5EDD8",color:"#6B4226",desc:"Dagtrip naar de oude hoofdstad met indrukwekkende tempelru\xEFnes.",days:["28 jul"]},
-{id:"chiangmai",name:"Chiang Mai & omgeving",dates:"30 juli \u2013 3 aug",icon:"\u{1F33F}",bg:"#EAF2EC",color:"#3D6B4F",desc:"Jungle, olifanten, Grand Canyon Water Park, La Lanna Resort en de Golden Triangle.",days:["30 jul","31 jul","1 aug","2 aug"]},
-{id:"khaosok",name:"Khao Sok",dates:"3 \u2013 5 aug",icon:"\u{1F99C}",bg:"#EAF3DE",color:"#27500A",desc:"Jungle nationaalpark met indrukwekkend stuwmeer, grotten en wildlife.",days:["3 aug","4 aug"]},
-{id:"samui",name:"Koh Samui",dates:"5 \u2013 9 aug",icon:"\u{1F334}",bg:"#E6F1FB",color:"#185FA5",desc:"Eilandbasecamp \u2014 strand, Angthong Marine Park en dagtrips naar Koh Tao.",days:["5 aug","6 aug","7 aug","8 aug"]},
-{id:"kohtao",name:"Koh Tao",dates:"9 \u2013 13 aug",icon:"\u{1F93F}",bg:"#E1F5EE",color:"#0F6E56",desc:"Duikparadijs \u2014 PADI cursus voor de tieners, fun dives en snorkelen.",days:["9 aug","10 aug","11 aug","12 aug"]},
-{id:"huahin",name:"Hua Hin",dates:"13 \u2013 15 aug",icon:"\u{1F30A}",bg:"#FAEEDA",color:"#854F0B",desc:"Rustige kuststad, uitblazen voor de thuisreis.",days:["13 aug","14 aug"]},
-{id:"bangkok2",name:"Bangkok (terug)",dates:"15 \u2013 18 aug",icon:"\u{1F3D9}",bg:"#FAECE7",color:"#8B3A15",desc:"Laatste inkopen, fine dining en vertrek naar huis.",days:["15 aug","16 aug","17 aug"]},
+{id:"bangkok1",name:"Bangkok",dates:"24\u201328 juli",icon:"\uD83C\uDFD9",bg:"#FAECE7",color:"#8B3A15",desc:"Aankomst, Muay Thai gevecht en fietstocht met Co van Kessel.",days:["24 jul","25 jul","26 jul","27 jul"]},
+{id:"ayutthaya",name:"Ayutthaya",dates:"28 juli (dagtrip)",icon:"\uD83D\uDED5",bg:"#F5EDD8",color:"#6B4226",desc:"Dagtrip naar de oude hoofdstad met tempelru\xEFnes.",days:["28 jul"]},
+{id:"chiangmai",name:"Chiang Mai & omgeving",dates:"30 juli\u20133 aug",icon:"\uD83C\uDF3F",bg:"#EAF2EC",color:"#3D6B4F",desc:"Jungle, olifanten, Grand Canyon Water Park en La Lanna Resort.",days:["30 jul","31 jul","1 aug","2 aug"]},
+{id:"khaosok",name:"Khao Sok",dates:"3\u20135 aug",icon:"\uD83E\uDD9C",bg:"#EAF3DE",color:"#27500A",desc:"Jungle nationaalpark met stuwmeer, grotten en wildlife.",days:["3 aug","4 aug"]},
+{id:"samui",name:"Koh Samui",dates:"5\u20139 aug",icon:"\uD83C\uDF34",bg:"#E6F1FB",color:"#185FA5",desc:"Eilandbasecamp \u2014 strand en Angthong Marine Park.",days:["5 aug","6 aug","7 aug","8 aug"]},
+{id:"kohtao",name:"Koh Tao",dates:"9\u201313 aug",icon:"\uD83E\uDD3F",bg:"#E1F5EE",color:"#0F6E56",desc:"Duikparadijs \u2014 PADI cursus voor de tieners en fun dives.",days:["9 aug","10 aug","11 aug","12 aug"]},
+{id:"huahin",name:"Hua Hin",dates:"13\u201315 aug",icon:"\uD83C\uDF0A",bg:"#FAEEDA",color:"#854F0B",desc:"Rustige kuststad, uitblazen voor de thuisreis.",days:["13 aug","14 aug"]},
+{id:"bangkok2",name:"Bangkok (terug)",dates:"15\u201318 aug",icon:"\uD83C\uDFD9",bg:"#FAECE7",color:"#8B3A15",desc:"Laatste inkopen, fine dining en vertrek naar huis.",days:["15 aug","16 aug","17 aug"]},
 ];
-const activities=[
-{id:"a01",seg:"bangkok1",name:"Muay Thai gevecht",desc:"Echt gevecht in Lumpini of Rajadamnern Stadium. Traditionele muziek, druk publiek, meerdere kampen op \xe9\xe9n avond.",tags:["sport","must"],dur:"3 uur",teen:true},
-{id:"a02",seg:"bangkok1",name:"Fietstocht Co van Kessel",desc:"Klassieke Bangkok fietstocht door Chinatown en langs de khlongs. Vertrekt vroeg \u2014 ruim van tevoren boeken.",tags:["cultuur","natuur","must"],dur:"4\u20135 uur",teen:true},
-{id:"a03",seg:"bangkok1",name:"Chao Phraya boottocht",desc:"Lokale expressboot of longtail langs de grote tempels en het koninklijk paleis.",tags:["cultuur","water"],dur:"2 uur",teen:true},
-{id:"a04",seg:"bangkok1",name:"Rooftopbar bij zonsondergang",desc:"Bangkok van bovenaf \u2014 Vertigo (Banyan Tree) of Sky Bar (Lebua). Reserveer vooraf.",tags:["cultuur"],dur:"2 uur",teen:false},
-{id:"a05",seg:"bangkok1",name:"Chinatown streetfood avond",desc:"Yaowarat Road: pad thai, dim sum, mango sticky rice. Gewoon lopen en proeven.",tags:["food","cultuur"],dur:"2\u20133 uur",teen:true},
-{id:"a06",seg:"bangkok1",name:"Wat Pho en Wat Arun",desc:"Liggende Boeddha (46m) en de Tempel van de Dageraad. Neem de veerboot voor Wat Arun.",tags:["cultuur"],dur:"3 uur",teen:false},
-{id:"a07",seg:"bangkok1",name:"Chatuchak Weekend Market",desc:"Grootste markt van Azi\xEB \u2014 15.000 kraampjes. Alleen in het weekend open.",tags:["cultuur","food"],dur:"3 uur",teen:true},
-{id:"b01",seg:"ayutthaya",name:"Tempelru\xEFnes per fiets",desc:"Langs Wat Mahathat (hoofd in boomwortels) en Wat Phra Si Sanphet. Vroeg vertrekken.",tags:["cultuur","natuur","must"],dur:"Hele dag",teen:true},
-{id:"b02",seg:"ayutthaya",name:"Rondrit per tuk-tuk",desc:"Comfortabele rondrit langs alle hoofdtempels met chauffeur.",tags:["cultuur"],dur:"3\u20134 uur",teen:true},
-{id:"c01",seg:"chiangmai",name:"La Lanna Resort",desc:"Het signature schuifbed glijdt s ochtends automatisch naar het balkon. Prioriteit voor 1 nacht.",tags:["natuur","must"],dur:"1 nacht",teen:true},
-{id:"c02",seg:"chiangmai",name:"Ethisch olifantenreservaat",desc:"Hele dag voeren, verzorgen en naast olifanten lopen \u2014 geen rijden. Elephant Nature Park.",tags:["natuur","must","tieners"],dur:"Hele dag",teen:true},
-{id:"c03",seg:"chiangmai",name:"Bamboe rafting met olifanten",desc:"Tocht op bamboe vlotten terwijl olifanten in het water naast je lopen.",tags:["natuur","water","tieners"],dur:"Halve dag",teen:true},
-{id:"c04",seg:"chiangmai",name:"Grand Canyon Water Park",desc:"Waterpark in een oude steengroeve \u2014 glijbanen en obstacles. Tickets vooraf boeken.",tags:["water","sport","tieners","must"],dur:"3\u20134 uur",teen:true},
+
+const defaultActivities=[
+{id:"a01",seg:"bangkok1",name:"Muay Thai gevecht",desc:"Echt gevecht in Lumpini of Rajadamnern Stadium. Traditionele muziek en druk publiek.",tags:["sport","must"],dur:"3 uur",teen:true},
+{id:"a02",seg:"bangkok1",name:"Fietstocht Co van Kessel",desc:"Door Chinatown en langs de khlongs. Vroeg vertrekken \u2014 ruim van tevoren boeken.",tags:["cultuur","natuur","must"],dur:"4\u20135 uur",teen:true},
+{id:"a03",seg:"bangkok1",name:"Chao Phraya boottocht",desc:"Expressboot of longtail langs de grote tempels en het koninklijk paleis.",tags:["cultuur","water"],dur:"2 uur",teen:true},
+{id:"a04",seg:"bangkok1",name:"Rooftopbar bij zonsondergang",desc:"Vertigo (Banyan Tree) of Sky Bar (Lebua). Reserveer een tafel vooraf.",tags:["cultuur"],dur:"2 uur",teen:false},
+{id:"a05",seg:"bangkok1",name:"Chinatown streetfood avond",desc:"Yaowarat Road: pad thai, dim sum, mango sticky rice.",tags:["food","cultuur"],dur:"2\u20133 uur",teen:true},
+{id:"a06",seg:"bangkok1",name:"Wat Pho en Wat Arun",desc:"Liggende Boeddha (46m) en de Tempel van de Dageraad.",tags:["cultuur"],dur:"3 uur",teen:false},
+{id:"a07",seg:"bangkok1",name:"Chatuchak Weekend Market",desc:"Grootste markt van Azi\xEB \u2014 15.000 kraampjes, alleen in het weekend.",tags:["cultuur","food"],dur:"3 uur",teen:true},
+{id:"b01",seg:"ayutthaya",name:"Tempelru\xEFnes per fiets",desc:"Langs Wat Mahathat en Wat Phra Si Sanphet. Vroeg vertrekken vanwege de hitte.",tags:["cultuur","natuur","must"],dur:"Hele dag",teen:true},
+{id:"b02",seg:"ayutthaya",name:"Rondrit per tuk-tuk",desc:"Comfortabele rondrit langs alle hoofdtempels.",tags:["cultuur"],dur:"3\u20134 uur",teen:true},
+{id:"c01",seg:"chiangmai",name:"La Lanna Resort",desc:"Het schuifbed glijdt s ochtends automatisch naar het balkon. Prioriteit voor 1 nacht.",tags:["natuur","must"],dur:"1 nacht",teen:true},
+{id:"c02",seg:"chiangmai",name:"Ethisch olifantenreservaat",desc:"Hele dag voeren en verzorgen \u2014 geen rijden. Elephant Nature Park.",tags:["natuur","must","tieners"],dur:"Hele dag",teen:true},
+{id:"c03",seg:"chiangmai",name:"Bamboe rafting met olifanten",desc:"Vlotten op de rivier terwijl olifanten naast je lopen.",tags:["natuur","water","tieners"],dur:"Halve dag",teen:true},
+{id:"c04",seg:"chiangmai",name:"Grand Canyon Water Park",desc:"Waterpark in een steengroeve \u2014 glijbanen en obstacles. Tickets vooraf.",tags:["water","sport","tieners","must"],dur:"3\u20134 uur",teen:true},
 {id:"c05",seg:"chiangmai",name:"Thai kookcursus",desc:"Markt bezoeken en 4\u20135 gerechten koken. Thai Farm Cooking School.",tags:["food","cultuur"],dur:"Halve dag",teen:true},
-{id:"c06",seg:"chiangmai",name:"Witte Tempel Chiang Rai",desc:"Wat Rong Khun \u2014 surrealistisch witte tempel met spiegelglas.",tags:["cultuur"],dur:"Halve dag",teen:true},
+{id:"c06",seg:"chiangmai",name:"Witte Tempel Chiang Rai",desc:"Wat Rong Khun \u2014 surrealistisch wit met spiegelglas.",tags:["cultuur"],dur:"Halve dag",teen:true},
 {id:"c07",seg:"chiangmai",name:"Golden Triangle rondrit",desc:"Zelfrijdend door Chiang Rai, Mae Salong en het drielandenpunt.",tags:["cultuur","natuur"],dur:"1\u20132 dagen",teen:false},
-{id:"c08",seg:"chiangmai",name:"Doi Inthanon nationaalpark",desc:"Hoogste berg van Thailand (2565m) met watervallen en koninklijke pagodes.",tags:["natuur"],dur:"Hele dag",teen:false},
-{id:"d01",seg:"khaosok",name:"Rondvaart Cheow Lan meer",desc:"Stuwmeer tussen kalkstenen rotsen. Boottocht langs grotten en drijvende lodges.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
+{id:"c08",seg:"chiangmai",name:"Doi Inthanon nationaalpark",desc:"Hoogste berg van Thailand (2565m) met watervallen.",tags:["natuur"],dur:"Hele dag",teen:false},
+{id:"d01",seg:"khaosok",name:"Rondvaart Cheow Lan meer",desc:"Boottocht langs kalkstenen rotsen, grotten en drijvende lodges.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
 {id:"d02",seg:"khaosok",name:"Overnachten op het meer",desc:"Drijvende rafthouses \u2014 s avonds donker, s ochtends mist en gibbons.",tags:["natuur","must"],dur:"1 nacht",teen:true},
-{id:"d03",seg:"khaosok",name:"Jungle trekking",desc:"Gids door het oerwoud \u2014 gibbons, vleesetende planten en watervallen.",tags:["natuur","sport"],dur:"Halve dag",teen:true},
-{id:"d04",seg:"khaosok",name:"Kajakken op het meer",desc:"Peddelen door inhammen tussen de kalkstenen rotsformaties.",tags:["water","sport","tieners"],dur:"2\u20133 uur",teen:true},
+{id:"d03",seg:"khaosok",name:"Jungle trekking",desc:"Gids door het oerwoud \u2014 gibbons en vleesetende planten.",tags:["natuur","sport"],dur:"Halve dag",teen:true},
+{id:"d04",seg:"khaosok",name:"Kajakken op het meer",desc:"Peddelen tussen de kalkstenen rotsformaties.",tags:["water","sport","tieners"],dur:"2\u20133 uur",teen:true},
 {id:"e01",seg:"samui",name:"Angthong Marine Park",desc:"42 eilandjes \u2014 kajakken, snorkelen en smaragdgroene lagune.",tags:["natuur","water","must"],dur:"Hele dag",teen:true},
-{id:"e02",seg:"samui",name:"Dagtocht Koh Tao snorkelen",desc:"Speedboot naar Koh Tao en Koh Nang Yuan. Snorkelen bij koraalriffen.",tags:["water","natuur"],dur:"Hele dag",teen:true},
-{id:"e03",seg:"samui",name:"Big Buddha bij zonsondergang",desc:"Groot gouden Boeddhabeeld op het noordpunt. Gratis toegang.",tags:["cultuur"],dur:"1 uur",teen:false},
-{id:"e04",seg:"samui",name:"Vissersmarkt Nathon",desc:"Lokale markt \u2014 vers fruit, vis en streetfood. Minder toeristisch.",tags:["food","cultuur"],dur:"2 uur",teen:false},
-{id:"f01",seg:"kohtao",name:"PADI open water cursus",desc:"Volledige certificering voor de tieners (min. 10 jaar). 3\u20134 dagen.",tags:["water","sport","must","tieners"],dur:"3\u20134 dagen",teen:true},
-{id:"f02",seg:"kohtao",name:"Fun dives voor gecertificeerden",desc:"2\u20133 duiken op Chumphon Pinnacle, Southwest Pinnacle en Shark Island.",tags:["water","sport","must"],dur:"Hele dag",teen:true},
-{id:"f03",seg:"kohtao",name:"Snorkelen Shark Bay",desc:"Schildpadden spotten in ondiep water \u2014 bijna gegarandeerd. Geen boot nodig.",tags:["water","natuur","tieners"],dur:"2 uur",teen:true},
-{id:"f04",seg:"kohtao",name:"Zonsondergang viewpoint",desc:"Scooter huren naar het viewpoint op de westkant \u2014 beste zonsondergang.",tags:["natuur"],dur:"1 uur",teen:true},
-{id:"f05",seg:"kohtao",name:"Freediving introductie",desc:"Eendaagse intro. Populair op Koh Tao, goed naast de PADI week.",tags:["water","sport","tieners"],dur:"1 dag",teen:true},
+{id:"e02",seg:"samui",name:"Dagtocht Koh Tao snorkelen",desc:"Speedboot naar Koh Tao. Snorkelen bij koraalriffen, lunch aan boord.",tags:["water","natuur"],dur:"Hele dag",teen:true},
+{id:"e03",seg:"samui",name:"Big Buddha bij zonsondergang",desc:"Groot gouden Boeddhabeeld op het noordpunt. Gratis.",tags:["cultuur"],dur:"1 uur",teen:false},
+{id:"e04",seg:"samui",name:"Vissersmarkt Nathon",desc:"Lokale markt \u2014 vis, fruit en streetfood.",tags:["food","cultuur"],dur:"2 uur",teen:false},
+{id:"f01",seg:"kohtao",name:"PADI open water cursus",desc:"Certificering voor de tieners (min. 10 jaar). 3\u20134 dagen, eindigt met vrije duiken.",tags:["water","sport","must","tieners"],dur:"3\u20134 dagen",teen:true},
+{id:"f02",seg:"kohtao",name:"Fun dives voor gecertificeerden",desc:"Chumphon Pinnacle, Southwest Pinnacle en Shark Island.",tags:["water","sport","must"],dur:"Hele dag",teen:true},
+{id:"f03",seg:"kohtao",name:"Snorkelen Shark Bay",desc:"Schildpadden in ondiep water \u2014 bijna gegarandeerd, geen boot nodig.",tags:["water","natuur","tieners"],dur:"2 uur",teen:true},
+{id:"f04",seg:"kohtao",name:"Zonsondergang viewpoint",desc:"Scooter huren naar de westkant \u2014 beste zonsondergang van Koh Tao.",tags:["natuur"],dur:"1 uur",teen:true},
+{id:"f05",seg:"kohtao",name:"Freediving introductie",desc:"Eendaagse intro, populair naast de PADI week.",tags:["water","sport","tieners"],dur:"1 dag",teen:true},
 {id:"g01",seg:"huahin",name:"Verkennen per fiets of scooter",desc:"Koninklijk zomerpaleis, oud treinstation en rustige stranden.",tags:["cultuur","natuur"],dur:"Hele dag",teen:false},
-{id:"g02",seg:"huahin",name:"Nachtmarkt Hua Hin",desc:"Eten, kleding en souvenirs. Milder dan Bangkok.",tags:["food","cultuur"],dur:"2 uur",teen:true},
-{id:"g03",seg:"huahin",name:"Dag op het strand",desc:"Lang en rustig strand. Perfect voor de laatste ontspanning.",tags:["natuur","water"],dur:"Hele dag",teen:true},
-{id:"h01",seg:"bangkok2",name:"Jim Thompson House",desc:"Teak villa van de Amerikaanse zijdehandelaar \u2014 mooie tuin en fascinerende geschiedenis.",tags:["cultuur"],dur:"2 uur",teen:false},
-{id:"h02",seg:"bangkok2",name:"MBK en Siam shopping",desc:"Laatste cadeaus \u2014 MBK voor elektronica, Siam Paragon voor internationale merken.",tags:["cultuur","tieners"],dur:"3 uur",teen:true},
-{id:"h03",seg:"bangkok2",name:"Fine dining afsluiting",desc:"Nahm, Bo.lan of Paste voor moderne Thai fine dining. Reserveer ruim van tevoren.",tags:["food","must"],dur:"2\u20133 uur",teen:false},
-{id:"h04",seg:"bangkok2",name:"Lumpini Park ochtendwandeling",desc:"Tai chi, varanen langs het water en rust voor de dag begint.",tags:["natuur"],dur:"1,5 uur",teen:false},
+{id:"g02",seg:"huahin",name:"Nachtmarkt Hua Hin",desc:"Eten, kleding en souvenirs in een rustige sfeer.",tags:["food","cultuur"],dur:"2 uur",teen:true},
+{id:"g03",seg:"huahin",name:"Dag op het strand",desc:"Lang rustig strand \u2014 perfecte laatste ontspanning.",tags:["natuur","water"],dur:"Hele dag",teen:true},
+{id:"h01",seg:"bangkok2",name:"Jim Thompson House",desc:"Teak villa met mooie tuin en fascinerende geschiedenis.",tags:["cultuur"],dur:"2 uur",teen:false},
+{id:"h02",seg:"bangkok2",name:"MBK en Siam shopping",desc:"Laatste cadeaus \u2014 MBK voor elektronica, Siam Paragon voor merken.",tags:["cultuur","tieners"],dur:"3 uur",teen:true},
+{id:"h03",seg:"bangkok2",name:"Fine dining afsluiting",desc:"Nahm, Bo.lan of Paste voor modern Thai fine dining. Reserveer vooraf.",tags:["food","must"],dur:"2\u20133 uur",teen:false},
+{id:"h04",seg:"bangkok2",name:"Lumpini Park ochtendwandeling",desc:"Tai chi, varanen en rust voor de drukte van de dag.",tags:["natuur"],dur:"1,5 uur",teen:false},
 ];
+
+// Load custom activities from localStorage
+const customActivities = JSON.parse(localStorage.getItem('th_custom')||'[]');
+let activities = [...defaultActivities, ...customActivities];
+
 const storage={
   checked:new Set(JSON.parse(localStorage.getItem('th_checked')||'[]')),
   planned:JSON.parse(localStorage.getItem('th_planned')||'{}'),
-  save(){localStorage.setItem('th_checked',JSON.stringify([...this.checked]));localStorage.setItem('th_planned',JSON.stringify(this.planned));}
+  save(){
+    localStorage.setItem('th_checked',JSON.stringify([...this.checked]));
+    localStorage.setItem('th_planned',JSON.stringify(this.planned));
+  }
 };
-let activeFilter='alle',modalState={actId:null,selectedDate:null};
+
+let activeFilter='alle', modalState={actId:null,selectedDate:null};
+const allTags=['cultuur','natuur','water','food','sport','tieners','must'];
+const tagLabels={cultuur:'Cultuur',natuur:'Natuur',water:'Water',food:'Eten',sport:'Sport',tieners:'Tieners \u2605',must:'Must do'};
+
 function showPage(p){
   document.querySelectorAll('.page').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el=>el.classList.remove('active'));
@@ -273,70 +352,181 @@ function showPage(p){
   document.querySelectorAll('.nav-tab').forEach(el=>{if(el.textContent.toLowerCase().includes(p==='route'?'route':'activ'))el.classList.add('active');});
 }
 function goToSegment(segId){showPage('activiteiten');setTimeout(()=>{const el=document.getElementById('seg-'+segId);if(el)el.scrollIntoView({behavior:'smooth'});},80);}
-function tagLabel(t){return{cultuur:'Cultuur',natuur:'Natuur',water:'Water',food:'Eten',sport:'Sport',tieners:'Tieners \u2605',must:'Must do'}[t]||t;}
+
+function buildSegmentSelect(id){
+  const sel=document.getElementById(id);
+  sel.innerHTML=segments.map(s=>`<option value="${s.id}">${s.name} (${s.dates})</option>`).join('');
+}
+function buildTagToggles(containerId, prefix){
+  document.getElementById(containerId).innerHTML=allTags.map(t=>
+    `<button class="tag-toggle" id="${prefix}_${t}" onclick="toggleTag('${prefix}','${t}')">${tagLabels[t]}</button>`
+  ).join('');
+}
+function toggleTag(prefix,t){
+  const btn=document.getElementById(prefix+'_'+t);
+  btn.classList.toggle('on');
+}
+function getSelectedTags(prefix){
+  return allTags.filter(t=>document.getElementById(prefix+'_'+t)?.classList.contains('on'));
+}
+
+function switchAddTab(tab){
+  document.querySelectorAll('.add-tab').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.add-panel').forEach(el=>el.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-'+tab).classList.add('active');
+}
+
+async function fetchUrl(){
+  const url=document.getElementById('urlInput').value.trim();
+  if(!url){alert('Plak eerst een URL');return;}
+  const status=document.getElementById('urlStatus');
+  status.textContent='Bezig met ophalen\u2026';
+  document.getElementById('urlForm').style.display='none';
+  try{
+    const r=await fetch('/.netlify/functions/fetch-url',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({url})
+    });
+    const data=await r.json();
+    if(!r.ok)throw new Error(data.error||'Fout');
+    document.getElementById('urlName').value=data.title||'';
+    document.getElementById('urlDesc').value=data.desc||'';
+    document.getElementById('urlHref').value=url;
+    status.textContent=data.title?'Gevonden! Pas aan en voeg toe.':'Ophalen gelukt, vul naam in.';
+    document.getElementById('urlForm').style.display='block';
+  }catch(e){
+    status.textContent='Kon niet ophalen: '+e.message+'. Gebruik "Zelf invullen".';
+  }
+}
+
+function saveCustom(act){
+  const saved=JSON.parse(localStorage.getItem('th_custom')||'[]');
+  saved.push(act);
+  localStorage.setItem('th_custom',JSON.stringify(saved));
+}
+
+function addFromUrl(){
+  const name=document.getElementById('urlName').value.trim();
+  if(!name){alert('Vul een naam in');return;}
+  const act={
+    id:'custom_'+Date.now(),
+    seg:document.getElementById('urlSeg').value,
+    name,
+    desc:document.getElementById('urlDesc').value.trim(),
+    url:document.getElementById('urlHref').value,
+    tags:getSelectedTags('url'),
+    dur:document.getElementById('urlDur').value.trim()||'',
+    teen:getSelectedTags('url').includes('tieners'),
+    custom:true
+  };
+  activities.push(act);
+  saveCustom(act);
+  renderActivities();
+  document.getElementById('urlInput').value='';
+  document.getElementById('urlStatus').textContent='\u2713 Toegevoegd!';
+  document.getElementById('urlForm').style.display='none';
+  setTimeout(()=>{document.getElementById('urlStatus').textContent='';},2000);
+}
+
+function addManual(){
+  const name=document.getElementById('manName').value.trim();
+  if(!name){alert('Vul een naam in');return;}
+  const act={
+    id:'custom_'+Date.now(),
+    seg:document.getElementById('manSeg').value,
+    name,
+    desc:document.getElementById('manDesc').value.trim(),
+    tags:getSelectedTags('man'),
+    dur:document.getElementById('manDur').value.trim()||'',
+    teen:getSelectedTags('man').includes('tieners'),
+    custom:true
+  };
+  activities.push(act);
+  saveCustom(act);
+  renderActivities();
+  document.getElementById('manName').value='';
+  document.getElementById('manDesc').value='';
+  document.getElementById('manDur').value='';
+  allTags.forEach(t=>{const b=document.getElementById('man_'+t);if(b)b.classList.remove('on');});
+  alert('\u2713 '+name+' toegevoegd!');
+}
+
+function deleteActivity(id){
+  if(!confirm('Activiteit verwijderen?'))return;
+  activities=activities.filter(a=>a.id!==id);
+  const saved=JSON.parse(localStorage.getItem('th_custom')||'[]').filter(a=>a.id!==id);
+  localStorage.setItem('th_custom',JSON.stringify(saved));
+  delete storage.planned[id];
+  storage.checked.delete(id);
+  storage.save();
+  renderActivities();
+  renderAgenda();
+}
+
 function renderRoute(){
   document.getElementById('routeGrid').innerHTML=segments.map(s=>{
     const count=activities.filter(a=>a.seg===s.id).length;
-    return '<div class="route-card" onclick="goToSegment(\''+s.id+'\')"><div class="rc-dates">'+s.dates+'</div><div class="rc-top"><span class="rc-icon">'+s.icon+'</span><span class="rc-name">'+s.name+'</span></div><div class="rc-desc">'+s.desc+'</div><div class="rc-count">'+count+' activiteiten \u2192</div></div>';
+    return `<div class="route-card" onclick="goToSegment('${s.id}')">
+      <div class="rc-dates">${s.dates}</div>
+      <div class="rc-top"><span class="rc-icon">${s.icon}</span><span class="rc-name">${s.name}</span></div>
+      <div class="rc-desc">${s.desc}</div>
+      <div class="rc-count">${count} activiteiten \u2192</div>
+    </div>`;
   }).join('');
 }
+
 function renderFilters(){
   const filters=['alle','must','cultuur','natuur','water','food','sport','tieners'];
-  const labels={alle:'Alle',must:'Must do',cultuur:'Cultuur',natuur:'Natuur',water:'Water',food:'Eten',sport:'Sport',tieners:'Tieners \u2605'};
-  document.getElementById('filterRow').innerHTML=filters.map(f=>'<button class="filter-btn'+(f===activeFilter?' active':'')+'" onclick="setFilter(\''+f+'\')">'+labels[f]+'</button>').join('');
+  document.getElementById('filterRow').innerHTML=filters.map(f=>
+    `<button class="filter-btn${f===activeFilter?' active':''}" onclick="setFilter('${f}')">${tagLabels[f]||'Alle'}</button>`
+  ).join('');
 }
 function setFilter(f){activeFilter=f;renderFilters();renderActivities();}
+
 function renderActivities(){
   document.getElementById('activitiesContainer').innerHTML=segments.map(seg=>{
     const acts=activities.filter(a=>{
       if(a.seg!==seg.id)return false;
-      if(activeFilter==='tieners'){if(!a.teen)return false;}
-      else if(activeFilter!=='alle'){if(!a.tags.includes(activeFilter))return false;}
+      if(activeFilter==='tieners')return a.teen;
+      if(activeFilter!=='alle')return a.tags.includes(activeFilter);
       return true;
     });
     if(!acts.length)return '';
-    return '<div class="segment-block segment-anchor" id="seg-'+seg.id+'"><div class="segment-header"><div class="seg-icon" style="background:'+seg.bg+'">'+seg.icon+'</div><div><div class="seg-name">'+seg.name+'</div><div class="seg-dates">'+seg.dates+'</div></div></div><div class="activities-grid">'+acts.map(a=>{
-      const planned=storage.planned[a.id];
-      return '<div class="act-card'+(storage.checked.has(a.id)?' done':'')+(planned?' planned':'')+'"><div class="act-top"><div class="act-name">'+a.name+'</div><div class="act-check'+(storage.checked.has(a.id)?' checked':'')+'" onclick="toggleCheck(\''+a.id+'\')" title="Afvinken"><svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div><div class="act-desc">'+a.desc+'</div><div class="act-footer"><div class="act-tags">'+a.tags.map(t=>'<span class="tag tag-'+t+'">'+tagLabel(t)+'</span>').join('')+'</div><div class="act-duration">&#9201; '+a.dur+'</div></div><button class="plan-btn'+(planned?' has-date':'')+'" onclick="openModal(\''+a.id+'\')">'+(planned?'\uD83D\uDCC5 '+planned:'+ Inplannen op datum')+'</button></div>';
-    }).join('')+'</div></div>';
+    return `<div class="segment-block segment-anchor" id="seg-${seg.id}">
+      <div class="segment-header">
+        <div class="seg-icon" style="background:${seg.bg}">${seg.icon}</div>
+        <div><div class="seg-name">${seg.name}</div><div class="seg-dates">${seg.dates}</div></div>
+      </div>
+      <div class="activities-grid">${acts.map(a=>{
+        const planned=storage.planned[a.id];
+        return `<div class="act-card${storage.checked.has(a.id)?' done':''}${planned?' planned':''}${a.custom?' custom':''}">
+          <div class="act-top">
+            <div class="act-name">${a.name}</div>
+            <div class="act-actions">
+              ${a.custom?`<div class="act-del" onclick="deleteActivity('${a.id}')" title="Verwijderen">\u2715</div>`:''}
+              <div class="act-check${storage.checked.has(a.id)?' checked':''}" onclick="toggleCheck('${a.id}')" title="Afvinken">
+                <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+            </div>
+          </div>
+          ${a.desc?`<div class="act-desc">${a.desc}</div>`:''}
+          ${a.url?`<a class="act-link" href="${a.url}" target="_blank">\uD83D\uDD17 Bekijk website</a>`:''}
+          <div class="act-footer">
+            <div class="act-tags">${a.tags.map(t=>`<span class="tag tag-${t}">${tagLabels[t]}</span>`).join('')}</div>
+            ${a.dur?`<div class="act-duration">\u23F1 ${a.dur}</div>`:''}
+          </div>
+          <button class="plan-btn${planned?' has-date':''}" onclick="openModal('${a.id}')">
+            ${planned?'\uD83D\uDCC5 '+planned:'+ Inplannen op datum'}
+          </button>
+        </div>`;
+      }).join('')}</div>
+    </div>`;
   }).join('');
 }
+
 function toggleCheck(id){if(storage.checked.has(id))storage.checked.delete(id);else storage.checked.add(id);storage.save();renderActivities();}
-
-async function doSearch(){
-  const q=document.getElementById('searchInput').value.trim();
-  if(!q)return;
-  const btn=document.getElementById('searchBtn');
-  const res=document.getElementById('searchResults');
-  btn.disabled=true;btn.textContent='Bezig\u2026';
-  res.innerHTML='<div class="search-msg">AI zoekt activiteiten voor jullie route\u2026</div>';
-  try{
-    const r=await fetch('/.netlify/functions/search',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({query:q})
-    });
-    const data=await r.json();
-    if(!r.ok)throw new Error(data.error||'Fout');
-    res.innerHTML=data.map(s=>{
-      const segName=segments.find(sg=>sg.id===s.segment)?.name||s.segment;
-      return '<div class="search-result-card"><div class="src-top"><div class="src-name">'+s.name+'</div><button class="src-add" onclick=\'addActivity('+JSON.stringify(s).replace(/'/g,"&#39;")+')\'>+ Toevoegen</button></div><div class="src-meta">'+segName+' &middot; '+s.duration+'</div><div class="src-meta">'+s.desc+'</div>'+(s.tip?'<div class="src-tip">&#128204; '+s.tip+'</div>':'')+'</div>';
-    }).join('');
-  }catch(e){
-    res.innerHTML='<div class="search-msg">&#9888; '+e.message+'</div>';
-  }
-  btn.disabled=false;btn.textContent='Zoeken \u2197';
-}
-
-function addActivity(s){
-  const newId='custom_'+Date.now();
-  activities.push({id:newId,seg:s.segment,name:s.name,desc:s.desc+(s.tip?' '+s.tip:''),tags:s.tags||[],dur:s.duration||'',teen:(s.tags||[]).includes('tieners')});
-  renderActivities();
-  document.getElementById('searchResults').innerHTML='<div class="search-msg">&#10003; '+s.name+' toegevoegd!</div>';
-  setTimeout(()=>{document.getElementById('searchResults').innerHTML='';},2500);
-}
-
-document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')doSearch();});
 
 function openModal(actId){
   const act=activities.find(a=>a.id===actId);
@@ -344,27 +534,59 @@ function openModal(actId){
   modalState={actId,selectedDate:storage.planned[actId]||null};
   document.getElementById('modalTitle').textContent=act.name;
   document.getElementById('modalSub').textContent='Kies een dag in '+seg.name;
-  document.getElementById('dateOptions').innerHTML=seg.days.map(d=>'<div class="date-option'+(modalState.selectedDate===d?' selected':'')+'" onclick="selectDate(\''+d+'\',this)">'+d+'</div>').join('');
+  document.getElementById('dateOptions').innerHTML=seg.days.map(d=>
+    `<div class="date-option${modalState.selectedDate===d?' selected':''}" onclick="selectDate('${d}',this)">${d}</div>`
+  ).join('');
   document.getElementById('modalOverlay').classList.remove('hidden');
 }
 function selectDate(d,el){modalState.selectedDate=d;document.querySelectorAll('.date-option').forEach(e=>e.classList.remove('selected'));el.classList.add('selected');}
 function confirmPlan(){if(!modalState.selectedDate){closeModal();return;}storage.planned[modalState.actId]=modalState.selectedDate;storage.save();closeModal();renderActivities();renderAgenda();}
 function closeModal(){document.getElementById('modalOverlay').classList.add('hidden');}
+
 function renderAgenda(){
   const entries=Object.entries(storage.planned);
-  if(!entries.length){document.getElementById('agendaContent').innerHTML='<p class="agenda-empty">Nog geen activiteiten ingepland \u2014 klik op &ldquo;+ Inplannen op datum&rdquo; bij een activiteit.</p>';return;}
+  if(!entries.length){
+    document.getElementById('agendaContent').innerHTML='<p class="agenda-empty">Nog geen activiteiten ingepland \u2014 klik op &ldquo;+ Inplannen op datum&rdquo; bij een activiteit.</p>';
+    return;
+  }
   const byDate={};
-  entries.forEach(([id,date])=>{const act=activities.find(a=>a.id===id);if(!act)return;const seg=segments.find(s=>s.id===act.seg);if(!byDate[date])byDate[date]=[];byDate[date].push({act,seg});});
+  entries.forEach(([id,date])=>{
+    const act=activities.find(a=>a.id===id);
+    if(!act)return;
+    const seg=segments.find(s=>s.id===act.seg);
+    if(!byDate[date])byDate[date]=[];
+    byDate[date].push({act,seg});
+  });
   const mn={jul:7,aug:8};
   const pd=s=>{const[d,m]=s.split(' ');return mn[m]*100+parseInt(d);};
   const sorted=Object.keys(byDate).sort((a,b)=>pd(a)-pd(b));
-  document.getElementById('agendaContent').innerHTML=sorted.map(date=>'<div class="agenda-day"><div class="agenda-day-header">'+date+'</div>'+byDate[date].map(({act,seg})=>'<div class="agenda-item"><span class="agenda-seg">'+seg.icon+' '+seg.name+'</span><span>'+act.name+'</span><button class="agenda-remove" onclick="removePlan(\''+act.id+'\')">&#x2715;</button></div>').join('')+'</div>').join('');
+  document.getElementById('agendaContent').innerHTML=sorted.map(date=>
+    `<div class="agenda-day">
+      <div class="agenda-day-header">${date}</div>
+      ${byDate[date].map(({act,seg})=>
+        `<div class="agenda-item">
+          <span class="agenda-seg">${seg.icon} ${seg.name}</span>
+          <span>${act.name}</span>
+          <button class="agenda-remove" onclick="removePlan('${act.id}')">\u2715</button>
+        </div>`
+      ).join('')}
+    </div>`
+  ).join('');
 }
 function removePlan(id){delete storage.planned[id];storage.save();renderActivities();renderAgenda();}
 function convertBaht(){const b=parseFloat(document.getElementById('bahtInput').value);document.getElementById('euroInput').value=isNaN(b)?'':(b/RATE).toFixed(2);}
 function convertEuro(){const e=parseFloat(document.getElementById('euroInput').value);document.getElementById('bahtInput').value=isNaN(e)?'':Math.round(e*RATE);}
 document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
-renderRoute();renderFilters();renderActivities();renderAgenda();
+
+// Init
+buildSegmentSelect('urlSeg');
+buildSegmentSelect('manSeg');
+buildTagToggles('urlTags','url');
+buildTagToggles('manTags','man');
+renderRoute();
+renderFilters();
+renderActivities();
+renderAgenda();
 </script>
 </body>
 </html>
