@@ -51,33 +51,36 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .agenda-remove:hover{border-color:var(--terra-light);color:var(--terra);}
 .agenda-empty{font-size:13px;color:var(--text-muted);font-style:italic;}
 
-/* TOEVOEGEN PANEEL */
+/* TOEVOEGEN */
 .add-section{background:var(--green);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1.5rem;}
 .add-title{font-family:'Playfair Display',serif;font-size:18px;color:var(--sand);margin-bottom:0.25rem;}
 .add-sub{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:1.25rem;}
-.add-tabs{display:flex;gap:8px;margin-bottom:1.25rem;}
-.add-tab{padding:6px 16px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;}
-.add-tab.active{background:rgba(255,255,255,0.15);color:var(--sand);border-color:rgba(255,255,255,0.5);}
-.add-panel{display:none;}.add-panel.active{display:block;}
-.form-row{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
-.form-input{flex:1;min-width:180px;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;}
+.form-group{margin-bottom:10px;}
+.form-label{font-size:12px;color:rgba(255,255,255,0.7);font-weight:500;margin-bottom:4px;display:block;text-transform:uppercase;letter-spacing:0.05em;}
+.form-row{display:flex;gap:10px;flex-wrap:wrap;}
+.form-input{flex:1;min-width:160px;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;width:100%;}
 .form-input:focus{background:var(--white);}
-.form-select{flex:1;min-width:180px;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;cursor:pointer;}
-.form-textarea{width:100%;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;resize:vertical;min-height:80px;margin-bottom:10px;}
-.tags-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
-.tag-toggle{padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;}
+.form-select{width:100%;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;cursor:pointer;}
+.form-textarea{width:100%;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;resize:vertical;min-height:70px;}
+.price-row{display:flex;gap:8px;align-items:center;}
+.price-input{width:120px;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;}
+.price-select{flex:1;padding:10px 14px;border-radius:var(--radius);border:none;font-family:'DM Sans',sans-serif;font-size:14px;background:rgba(255,255,255,0.92);color:var(--text);outline:none;cursor:pointer;}
+.tags-row{display:flex;gap:6px;flex-wrap:wrap;}
+.tag-toggle{padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.7);font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;transition:all 0.15s;}
 .tag-toggle.on{background:var(--terra);border-color:var(--terra);color:var(--white);}
-.add-btn{padding:10px 24px;background:var(--terra);color:var(--white);border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;}
+.photo-upload{width:100%;padding:12px;border-radius:var(--radius);border:2px dashed rgba(255,255,255,0.3);background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.6);font-size:13px;text-align:center;cursor:pointer;transition:all 0.2s;}
+.photo-upload:hover{border-color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.12);}
+.photo-preview{width:100%;height:140px;object-fit:cover;border-radius:var(--radius);margin-top:8px;display:none;}
+.form-divider{height:1px;background:rgba(255,255,255,0.15);margin:14px 0;}
+.add-btn{padding:11px 28px;background:var(--terra);color:var(--white);border:none;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;width:100%;margin-top:4px;}
 .add-btn:hover{background:var(--terra-dark);}
-.url-row{display:flex;gap:10px;margin-bottom:10px;}
-.url-fetch-btn{padding:10px 18px;background:rgba(255,255,255,0.15);color:var(--sand);border:1px solid rgba(255,255,255,0.3);border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:14px;cursor:pointer;white-space:nowrap;}
-.url-fetch-btn:hover{background:rgba(255,255,255,0.25);}
-.url-status{font-size:13px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:8px;}
 
-/* FILTER & ACTIVITEITEN */
+/* FILTER */
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.5rem;}
 .filter-btn{padding:6px 16px;border-radius:20px;border:1px solid var(--sand-dark);background:var(--white);color:var(--text-muted);font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;}
 .filter-btn.active{background:var(--terra);border-color:var(--terra);color:var(--white);font-weight:500;}
+
+/* ACTIVITEITEN */
 .segment-block{margin-bottom:2.5rem;}
 .segment-anchor{scroll-margin-top:80px;}
 .segment-header{display:flex;align-items:center;gap:12px;margin-bottom:1rem;padding-bottom:0.75rem;border-bottom:2px solid var(--sand-dark);}
@@ -85,22 +88,25 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .seg-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:600;}
 .seg-dates{font-size:13px;color:var(--text-muted);}
 .activities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
-.act-card{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius);padding:1rem;transition:border-color 0.2s;position:relative;}
+.act-card{background:var(--white);border:1px solid var(--sand-dark);border-radius:var(--radius);overflow:hidden;transition:border-color 0.2s;}
 .act-card:hover{border-color:var(--terra-light);}
 .act-card.done{opacity:0.45;}
 .act-card.planned{border-color:var(--green);border-width:1.5px;}
 .act-card.custom{border-left:3px solid var(--green);}
+.act-photo{width:100%;height:130px;object-fit:cover;display:block;}
+.act-body{padding:1rem;}
 .act-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:6px;}
 .act-name{font-weight:500;font-size:15px;line-height:1.3;}
-.act-actions{display:flex;gap:6px;flex-shrink:0;}
+.act-actions{display:flex;gap:5px;flex-shrink:0;}
 .act-check{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sand-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--white);}
 .act-check.checked{background:var(--green);border-color:var(--green);}
 .act-check svg{display:none;}
 .act-check.checked svg{display:block;}
-.act-del{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sand-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--white);font-size:11px;color:var(--text-muted);}
+.act-del{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--sand-dark);cursor:pointer;display:flex;align-items:center;justify-content:center;background:var(--white);font-size:10px;color:var(--text-muted);}
 .act-del:hover{border-color:#e57373;color:#e57373;}
 .act-desc{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:8px;}
-.act-link{font-size:12px;color:var(--green);text-decoration:none;display:inline-block;margin-bottom:6px;}
+.act-price{font-size:13px;color:var(--green);font-weight:500;margin-bottom:6px;}
+.act-link{font-size:12px;color:var(--terra);text-decoration:none;display:inline-flex;align-items:center;gap:4px;margin-bottom:6px;}
 .act-link:hover{text-decoration:underline;}
 .act-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;}
 .act-tags{display:flex;gap:4px;flex-wrap:wrap;}
@@ -146,7 +152,7 @@ nav{background:var(--terra-dark);padding:0 2rem;display:flex;align-items:center;
 .conv-rate{font-size:12px;color:rgba(255,255,255,0.3);margin-top:4px;text-align:right;}
 footer{background:var(--terra-dark);padding:2rem;text-align:center;color:rgba(255,255,255,0.35);font-size:13px;}
 footer strong{color:var(--sand-dark);}
-@media(max-width:640px){.route-grid{grid-template-columns:1fr;}.form-row{flex-direction:column;}.url-row{flex-direction:column;}.hero-stats{gap:1.25rem;padding:0.75rem 1.25rem;}}
+@media(max-width:640px){.route-grid{grid-template-columns:1fr;}.form-row{flex-direction:column;}.hero-stats{gap:1.25rem;padding:0.75rem 1.25rem;}}
 </style>
 </head>
 <body>
@@ -171,7 +177,6 @@ footer strong{color:var(--sand-dark);}
 </div>
 
 <div class="container">
-  <!-- ROUTE PAGE -->
   <div class="page active" id="page-route">
     <div style="padding:2.5rem 0 0.5rem;">
       <h2 class="section-title">De route</h2>
@@ -180,66 +185,85 @@ footer strong{color:var(--sand-dark);}
     <div class="route-grid" id="routeGrid"></div>
   </div>
 
-  <!-- ACTIVITEITEN PAGE -->
   <div class="page" id="page-activiteiten">
     <div style="padding:2.5rem 0 0;">
       <h2 class="section-title">Activiteiten</h2>
       <p class="section-sub">Plan, vink af en voeg toe.</p>
     </div>
 
-    <!-- DAGAGENDA -->
     <div class="agenda-section">
       <div class="agenda-title">&#128197; Dagagenda</div>
-      <div id="agendaContent"><p class="agenda-empty">Nog geen activiteiten ingepland &mdash; klik op &ldquo;+ Inplannen&rdquo; bij een activiteit.</p></div>
+      <div id="agendaContent"><p class="agenda-empty">Nog geen activiteiten ingepland.</p></div>
     </div>
 
-    <!-- TOEVOEGEN -->
     <div class="add-section">
       <div class="add-title">Activiteit toevoegen</div>
-      <div class="add-sub">Plak een link van TripAdvisor of GetYourGuide, of vul zelf in.</div>
-      <div class="add-tabs">
-        <button class="add-tab active" onclick="switchAddTab('url')">&#128279; Via URL</button>
-        <button class="add-tab" onclick="switchAddTab('manual')">&#9998; Zelf invullen</button>
+      <div class="add-sub">Gevonden op TripAdvisor of GetYourGuide? Vul hieronder in en bewaar de link.</div>
+
+      <div class="form-group">
+        <label class="form-label">Naam *</label>
+        <input class="form-input" id="manName" type="text" placeholder="Naam van de activiteit" />
       </div>
 
-      <!-- URL TAB -->
-      <div class="add-panel active" id="panel-url">
-        <div class="url-row">
-          <input class="form-input" id="urlInput" type="url" placeholder="Plak hier een URL (TripAdvisor, GetYourGuide, etc.)" />
-          <button class="url-fetch-btn" onclick="fetchUrl()">Ophalen</button>
-        </div>
-        <div class="url-status" id="urlStatus"></div>
-        <div id="urlForm" style="display:none;">
-          <input class="form-input" id="urlName" type="text" placeholder="Naam activiteit" style="width:100%;margin-bottom:10px;" />
-          <textarea class="form-textarea" id="urlDesc" placeholder="Beschrijving"></textarea>
-          <div class="form-row">
-            <select class="form-select" id="urlSeg"></select>
-            <input class="form-input" id="urlDur" type="text" placeholder="Duur (bv. 3 uur)" />
-          </div>
-          <div class="tags-row" id="urlTags"></div>
-          <input class="form-input" id="urlHref" type="hidden" />
-          <button class="add-btn" onclick="addFromUrl()">+ Toevoegen aan lijst</button>
-        </div>
+      <div class="form-group">
+        <label class="form-label">Notitie / beschrijving</label>
+        <textarea class="form-textarea" id="manDesc" placeholder="Beschrijving, tips of opmerkingen..."></textarea>
       </div>
 
-      <!-- HANDMATIG TAB -->
-      <div class="add-panel" id="panel-manual">
-        <input class="form-input" id="manName" type="text" placeholder="Naam activiteit" style="width:100%;margin-bottom:10px;" />
-        <textarea class="form-textarea" id="manDesc" placeholder="Beschrijving (optioneel)"></textarea>
-        <div class="form-row">
+      <div class="form-row" style="gap:10px;margin-bottom:10px;">
+        <div style="flex:1;min-width:160px;">
+          <label class="form-label">Bestemming</label>
           <select class="form-select" id="manSeg"></select>
-          <input class="form-input" id="manDur" type="text" placeholder="Duur (bv. 2 uur)" />
         </div>
-        <div class="tags-row" id="manTags"></div>
-        <button class="add-btn" onclick="addManual()">+ Toevoegen aan lijst</button>
+        <div style="flex:1;min-width:120px;">
+          <label class="form-label">Datum (optioneel)</label>
+          <select class="form-select" id="manDate"><option value="">Nog niet inplannen</option></select>
+        </div>
       </div>
+
+      <div class="form-row" style="gap:10px;margin-bottom:10px;">
+        <div style="flex:1;min-width:160px;">
+          <label class="form-label">Website URL</label>
+          <input class="form-input" id="manUrl" type="url" placeholder="https://..." />
+        </div>
+        <div style="flex:1;min-width:100px;">
+          <label class="form-label">Duur</label>
+          <input class="form-input" id="manDur" type="text" placeholder="bv. 3 uur" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Kosten (optioneel)</label>
+        <div class="price-row">
+          <span style="color:rgba(255,255,255,0.7);font-size:15px;">&#8364;</span>
+          <input class="price-input" id="manPrice" type="number" placeholder="0" min="0" />
+          <select class="price-select" id="manPriceType">
+            <option value="pp">per persoon</option>
+            <option value="totaal">totaal</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Foto (optioneel)</label>
+        <label class="photo-upload" for="manPhoto">&#128247; Klik om een foto te kiezen</label>
+        <input type="file" id="manPhoto" accept="image/*" style="display:none" onchange="previewPhoto()" />
+        <img class="photo-preview" id="photoPreview" />
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-group">
+        <label class="form-label">Categorie</label>
+        <div class="tags-row" id="manTags"></div>
+      </div>
+
+      <button class="add-btn" onclick="addManual()">+ Toevoegen aan lijst</button>
     </div>
 
-    <!-- FILTER -->
     <div class="filter-row" id="filterRow"></div>
     <div id="activitiesContainer"></div>
 
-    <!-- CONVERTER -->
     <div class="converter-section" id="omrekenen">
       <div style="flex:1;min-width:200px;">
         <div class="conv-title">Baht &#8596; Euro</div>
@@ -260,7 +284,6 @@ footer strong{color:var(--sand-dark);}
   </div>
 </div>
 
-<!-- DATUM MODAL -->
 <div class="modal-overlay hidden" id="modalOverlay">
   <div class="modal">
     <div class="modal-title" id="modalTitle">Activiteit inplannen</div>
@@ -325,23 +348,17 @@ const defaultActivities=[
 {id:"h01",seg:"bangkok2",name:"Jim Thompson House",desc:"Teak villa met mooie tuin en fascinerende geschiedenis.",tags:["cultuur"],dur:"2 uur",teen:false},
 {id:"h02",seg:"bangkok2",name:"MBK en Siam shopping",desc:"Laatste cadeaus \u2014 MBK voor elektronica, Siam Paragon voor merken.",tags:["cultuur","tieners"],dur:"3 uur",teen:true},
 {id:"h03",seg:"bangkok2",name:"Fine dining afsluiting",desc:"Nahm, Bo.lan of Paste voor modern Thai fine dining. Reserveer vooraf.",tags:["food","must"],dur:"2\u20133 uur",teen:false},
-{id:"h04",seg:"bangkok2",name:"Lumpini Park ochtendwandeling",desc:"Tai chi, varanen en rust voor de drukte van de dag.",tags:["natuur"],dur:"1,5 uur",teen:false},
+{id:"h04",seg:"bangkok2",name:"Lumpini Park ochtendwandeling",desc:"Tai chi, varanen en rust voor de dag begint.",tags:["natuur"],dur:"1,5 uur",teen:false},
 ];
 
-// Load custom activities from localStorage
-const customActivities = JSON.parse(localStorage.getItem('th_custom')||'[]');
-let activities = [...defaultActivities, ...customActivities];
-
+const customActivities=JSON.parse(localStorage.getItem('th_custom')||'[]');
+let activities=[...defaultActivities,...customActivities];
 const storage={
   checked:new Set(JSON.parse(localStorage.getItem('th_checked')||'[]')),
   planned:JSON.parse(localStorage.getItem('th_planned')||'{}'),
-  save(){
-    localStorage.setItem('th_checked',JSON.stringify([...this.checked]));
-    localStorage.setItem('th_planned',JSON.stringify(this.planned));
-  }
+  save(){localStorage.setItem('th_checked',JSON.stringify([...this.checked]));localStorage.setItem('th_planned',JSON.stringify(this.planned));}
 };
-
-let activeFilter='alle', modalState={actId:null,selectedDate:null};
+let activeFilter='alle',modalState={actId:null,selectedDate:null};
 const allTags=['cultuur','natuur','water','food','sport','tieners','must'];
 const tagLabels={cultuur:'Cultuur',natuur:'Natuur',water:'Water',food:'Eten',sport:'Sport',tieners:'Tieners \u2605',must:'Must do'};
 
@@ -354,101 +371,67 @@ function showPage(p){
 function goToSegment(segId){showPage('activiteiten');setTimeout(()=>{const el=document.getElementById('seg-'+segId);if(el)el.scrollIntoView({behavior:'smooth'});},80);}
 
 function buildSegmentSelect(id){
-  const sel=document.getElementById(id);
-  sel.innerHTML=segments.map(s=>`<option value="${s.id}">${s.name} (${s.dates})</option>`).join('');
+  document.getElementById(id).innerHTML=segments.map(s=>`<option value="${s.id}">${s.name}</option>`).join('');
 }
-function buildTagToggles(containerId, prefix){
+function buildDateSelect(segSelectId,dateSelectId){
+  const segId=document.getElementById(segSelectId).value;
+  const seg=segments.find(s=>s.id===segId);
+  const sel=document.getElementById(dateSelectId);
+  sel.innerHTML='<option value="">Nog niet inplannen</option>'+(seg?seg.days.map(d=>`<option value="${d}">${d}</option>`).join(''):'');
+}
+function buildTagToggles(containerId,prefix){
   document.getElementById(containerId).innerHTML=allTags.map(t=>
     `<button class="tag-toggle" id="${prefix}_${t}" onclick="toggleTag('${prefix}','${t}')">${tagLabels[t]}</button>`
   ).join('');
 }
-function toggleTag(prefix,t){
-  const btn=document.getElementById(prefix+'_'+t);
-  btn.classList.toggle('on');
-}
-function getSelectedTags(prefix){
-  return allTags.filter(t=>document.getElementById(prefix+'_'+t)?.classList.contains('on'));
-}
+function toggleTag(prefix,t){document.getElementById(prefix+'_'+t).classList.toggle('on');}
+function getSelectedTags(prefix){return allTags.filter(t=>document.getElementById(prefix+'_'+t)?.classList.contains('on'));}
 
-function switchAddTab(tab){
-  document.querySelectorAll('.add-tab').forEach(el=>el.classList.remove('active'));
-  document.querySelectorAll('.add-panel').forEach(el=>el.classList.remove('active'));
-  event.target.classList.add('active');
-  document.getElementById('panel-'+tab).classList.add('active');
-}
-
-async function fetchUrl(){
-  const url=document.getElementById('urlInput').value.trim();
-  if(!url){alert('Plak eerst een URL');return;}
-  const status=document.getElementById('urlStatus');
-  status.textContent='Bezig met ophalen\u2026';
-  document.getElementById('urlForm').style.display='none';
-  try{
-    const r=await fetch('/.netlify/functions/fetch-url',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({url})
-    });
-    const data=await r.json();
-    if(!r.ok)throw new Error(data.error||'Fout');
-    document.getElementById('urlName').value=data.title||'';
-    document.getElementById('urlDesc').value=data.desc||'';
-    document.getElementById('urlHref').value=url;
-    status.textContent=data.title?'Gevonden! Pas aan en voeg toe.':'Ophalen gelukt, vul naam in.';
-    document.getElementById('urlForm').style.display='block';
-  }catch(e){
-    status.textContent='Kon niet ophalen: '+e.message+'. Gebruik "Zelf invullen".';
-  }
-}
-
-function saveCustom(act){
-  const saved=JSON.parse(localStorage.getItem('th_custom')||'[]');
-  saved.push(act);
-  localStorage.setItem('th_custom',JSON.stringify(saved));
-}
-
-function addFromUrl(){
-  const name=document.getElementById('urlName').value.trim();
-  if(!name){alert('Vul een naam in');return;}
-  const act={
-    id:'custom_'+Date.now(),
-    seg:document.getElementById('urlSeg').value,
-    name,
-    desc:document.getElementById('urlDesc').value.trim(),
-    url:document.getElementById('urlHref').value,
-    tags:getSelectedTags('url'),
-    dur:document.getElementById('urlDur').value.trim()||'',
-    teen:getSelectedTags('url').includes('tieners'),
-    custom:true
+function previewPhoto(){
+  const file=document.getElementById('manPhoto').files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    const img=document.getElementById('photoPreview');
+    img.src=e.target.result;
+    img.style.display='block';
+    document.querySelector('.photo-upload').textContent='\u2713 '+file.name;
   };
-  activities.push(act);
-  saveCustom(act);
-  renderActivities();
-  document.getElementById('urlInput').value='';
-  document.getElementById('urlStatus').textContent='\u2713 Toegevoegd!';
-  document.getElementById('urlForm').style.display='none';
-  setTimeout(()=>{document.getElementById('urlStatus').textContent='';},2000);
+  reader.readAsDataURL(file);
 }
 
 function addManual(){
   const name=document.getElementById('manName').value.trim();
   if(!name){alert('Vul een naam in');return;}
+  const priceVal=document.getElementById('manPrice').value;
+  const priceType=document.getElementById('manPriceType').value;
+  const photoSrc=document.getElementById('photoPreview').src;
+  const date=document.getElementById('manDate').value;
   const act={
     id:'custom_'+Date.now(),
     seg:document.getElementById('manSeg').value,
     name,
     desc:document.getElementById('manDesc').value.trim(),
+    url:document.getElementById('manUrl').value.trim(),
     tags:getSelectedTags('man'),
-    dur:document.getElementById('manDur').value.trim()||'',
+    dur:document.getElementById('manDur').value.trim(),
+    price:priceVal?{amount:parseFloat(priceVal),type:priceType}:null,
+    photo:photoSrc&&photoSrc.startsWith('data:')?photoSrc:null,
     teen:getSelectedTags('man').includes('tieners'),
     custom:true
   };
   activities.push(act);
-  saveCustom(act);
+  const saved=JSON.parse(localStorage.getItem('th_custom')||'[]');
+  saved.push(act);
+  localStorage.setItem('th_custom',JSON.stringify(saved));
+  if(date){storage.planned[act.id]=date;storage.save();}
   renderActivities();
-  document.getElementById('manName').value='';
-  document.getElementById('manDesc').value='';
-  document.getElementById('manDur').value='';
+  renderAgenda();
+  // Reset form
+  ['manName','manDesc','manUrl','manDur','manPrice'].forEach(id=>{document.getElementById(id).value='';});
+  document.getElementById('manDate').value='';
+  document.getElementById('photoPreview').style.display='none';
+  document.querySelector('.photo-upload').textContent='\uD83D\uDCF7 Klik om een foto te kiezen';
   allTags.forEach(t=>{const b=document.getElementById('man_'+t);if(b)b.classList.remove('on');});
   alert('\u2713 '+name+' toegevoegd!');
 }
@@ -458,11 +441,8 @@ function deleteActivity(id){
   activities=activities.filter(a=>a.id!==id);
   const saved=JSON.parse(localStorage.getItem('th_custom')||'[]').filter(a=>a.id!==id);
   localStorage.setItem('th_custom',JSON.stringify(saved));
-  delete storage.planned[id];
-  storage.checked.delete(id);
-  storage.save();
-  renderActivities();
-  renderAgenda();
+  delete storage.planned[id];storage.checked.delete(id);storage.save();
+  renderActivities();renderAgenda();
 }
 
 function renderRoute(){
@@ -485,6 +465,13 @@ function renderFilters(){
 }
 function setFilter(f){activeFilter=f;renderFilters();renderActivities();}
 
+function priceLabel(price){
+  if(!price)return '';
+  const eur=price.amount.toFixed(0);
+  const baht=Math.round(price.amount*RATE);
+  return `\u20AC${eur} ${price.type==='pp'?'p.p.':'totaal'} (\u00B1\u0E3F${baht})`;
+}
+
 function renderActivities(){
   document.getElementById('activitiesContainer').innerHTML=segments.map(seg=>{
     const acts=activities.filter(a=>{
@@ -502,24 +489,28 @@ function renderActivities(){
       <div class="activities-grid">${acts.map(a=>{
         const planned=storage.planned[a.id];
         return `<div class="act-card${storage.checked.has(a.id)?' done':''}${planned?' planned':''}${a.custom?' custom':''}">
-          <div class="act-top">
-            <div class="act-name">${a.name}</div>
-            <div class="act-actions">
-              ${a.custom?`<div class="act-del" onclick="deleteActivity('${a.id}')" title="Verwijderen">\u2715</div>`:''}
-              <div class="act-check${storage.checked.has(a.id)?' checked':''}" onclick="toggleCheck('${a.id}')" title="Afvinken">
-                <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          ${a.photo?`<img class="act-photo" src="${a.photo}" alt="${a.name}" />`:''}
+          <div class="act-body">
+            <div class="act-top">
+              <div class="act-name">${a.name}</div>
+              <div class="act-actions">
+                ${a.custom?`<div class="act-del" onclick="deleteActivity('${a.id}')" title="Verwijderen">\u2715</div>`:''}
+                <div class="act-check${storage.checked.has(a.id)?' checked':''}" onclick="toggleCheck('${a.id}')" title="Afvinken">
+                  <svg width="12" height="12" viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
               </div>
             </div>
+            ${a.desc?`<div class="act-desc">${a.desc}</div>`:''}
+            ${a.price?`<div class="act-price">\uD83D\uDCB0 ${priceLabel(a.price)}</div>`:''}
+            ${a.url?`<a class="act-link" href="${a.url}" target="_blank">\uD83D\uDD17 Bekijk website</a>`:''}
+            <div class="act-footer">
+              <div class="act-tags">${a.tags.map(t=>`<span class="tag tag-${t}">${tagLabels[t]}</span>`).join('')}</div>
+              ${a.dur?`<div class="act-duration">\u23F1 ${a.dur}</div>`:''}
+            </div>
+            <button class="plan-btn${planned?' has-date':''}" onclick="openModal('${a.id}')">
+              ${planned?'\uD83D\uDCC5 '+planned:'+ Inplannen op datum'}
+            </button>
           </div>
-          ${a.desc?`<div class="act-desc">${a.desc}</div>`:''}
-          ${a.url?`<a class="act-link" href="${a.url}" target="_blank">\uD83D\uDD17 Bekijk website</a>`:''}
-          <div class="act-footer">
-            <div class="act-tags">${a.tags.map(t=>`<span class="tag tag-${t}">${tagLabels[t]}</span>`).join('')}</div>
-            ${a.dur?`<div class="act-duration">\u23F1 ${a.dur}</div>`:''}
-          </div>
-          <button class="plan-btn${planned?' has-date':''}" onclick="openModal('${a.id}')">
-            ${planned?'\uD83D\uDCC5 '+planned:'+ Inplannen op datum'}
-          </button>
         </div>`;
       }).join('')}</div>
     </div>`;
@@ -545,14 +536,10 @@ function closeModal(){document.getElementById('modalOverlay').classList.add('hid
 
 function renderAgenda(){
   const entries=Object.entries(storage.planned);
-  if(!entries.length){
-    document.getElementById('agendaContent').innerHTML='<p class="agenda-empty">Nog geen activiteiten ingepland \u2014 klik op &ldquo;+ Inplannen op datum&rdquo; bij een activiteit.</p>';
-    return;
-  }
+  if(!entries.length){document.getElementById('agendaContent').innerHTML='<p class="agenda-empty">Nog geen activiteiten ingepland.</p>';return;}
   const byDate={};
   entries.forEach(([id,date])=>{
-    const act=activities.find(a=>a.id===id);
-    if(!act)return;
+    const act=activities.find(a=>a.id===id);if(!act)return;
     const seg=segments.find(s=>s.id===act.seg);
     if(!byDate[date])byDate[date]=[];
     byDate[date].push({act,seg});
@@ -567,6 +554,7 @@ function renderAgenda(){
         `<div class="agenda-item">
           <span class="agenda-seg">${seg.icon} ${seg.name}</span>
           <span>${act.name}</span>
+          ${act.price?`<span style="font-size:12px;color:var(--green);margin-left:4px;">\u20AC${act.price.amount}</span>`:''}
           <button class="agenda-remove" onclick="removePlan('${act.id}')">\u2715</button>
         </div>`
       ).join('')}
@@ -579,14 +567,11 @@ function convertEuro(){const e=parseFloat(document.getElementById('euroInput').v
 document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
 
 // Init
-buildSegmentSelect('urlSeg');
 buildSegmentSelect('manSeg');
-buildTagToggles('urlTags','url');
+buildDateSelect('manSeg','manDate');
+document.getElementById('manSeg').addEventListener('change',()=>buildDateSelect('manSeg','manDate'));
 buildTagToggles('manTags','man');
-renderRoute();
-renderFilters();
-renderActivities();
-renderAgenda();
+renderRoute();renderFilters();renderActivities();renderAgenda();
 </script>
 </body>
 </html>
