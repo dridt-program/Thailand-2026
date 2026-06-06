@@ -575,6 +575,7 @@ function confirmPlan(){if(!modalState.selectedDate){closeModal();return;}storage
 function closeModal(){document.getElementById('modalOverlay').classList.add('hidden');}
 
 function renderAgenda(){
+  if(!document.getElementById('agendaContent'))return;
   const entries=Object.entries(storage.planned);
   if(!entries.length){document.getElementById('agendaContent').innerHTML='<p class="agenda-empty">Nog geen activiteiten ingepland.</p>';return;}
   const byDate={};
