@@ -415,44 +415,56 @@ function previewPhoto(){
 }
 
 function addManual(){
-  const name=document.getElementById('manName').value.trim();
+  var name=document.getElementById('manName').value.trim();
   if(!name){alert('Vul een naam in');return;}
-  const priceVal=document.getElementById('manPrice').value;
-  const priceType=document.getElementById('manPriceType').value;
-  const photoSrc=document.getElementById('photoPreview').src;
-  const date=document.getElementById('manDate').value;
-  const act={
+  var priceVal=document.getElementById('manPrice').value;
+  var priceType=document.getElementById('manPriceType').value;
+  var priceCurrency=document.getElementById('manPriceCurrency')?document.getElementById('manPriceCurrency').value:'eur';
+  var photoEl=document.getElementById('photoPreview');
+  var photoSrc=photoEl?photoEl.src:'';
+  var date=document.getElementById('manDate').value;
+  var act={
     id:'custom_'+Date.now(),
     seg:document.getElementById('manSeg').value,
-    name,
+    name:name,
     desc:document.getElementById('manDesc').value.trim(),
     url:document.getElementById('manUrl').value.trim(),
     tags:getSelectedTags('man'),
     dur:document.getElementById('manDur').value.trim(),
-    price:priceVal?{amount:parseFloat(priceVal),type:priceType}:null,
+    price:priceVal?{amount:parseFloat(priceVal),type:priceType,currency:priceCurrency}:null,
     photo:photoSrc&&photoSrc.startsWith('data:')?photoSrc:null,
     teen:getSelectedTags('man').includes('tieners'),
     custom:true
   };
-  activities.push(act);
-  const saved=JSON.parse(localStorage.getItem('th_custom')||'[]');
-  saved.push(act);
-  localStorage.setItem('th_custom',JSON.stringify(saved));
-  if(date){storage.planned[act.id]=date;storage.save();}
-  renderActivities();
-  renderAgenda();
+  try {
+    activities.push(act);
+    var saved=JSON.parse(localStorage.getItem('th_custom')||'[]');
+    saved.push(act);
+    localStorage.setItem('th_custom',JSON.stringify(saved));
+    if(date){storage.planned[act.id]=date;storage.save();}
+    renderActivities();
+  } catch(e) {
+    console.error('Fout bij opslaan:', e);
+    alert('Er ging iets mis: '+e.message);
+    return;
+  }
   // Reset form
-  ['manName','manDesc','manUrl','manDur','manPrice'].forEach(id=>{document.getElementById(id).value='';});
-  document.getElementById('manDate').value='';
-  document.getElementById('photoPreview').style.display='none';
-  document.querySelector('.photo-upload').textContent='\uD83D\uDCF7 Klik om een foto te kiezen';
-  allTags.forEach(t=>{const b=document.getElementById('man_'+t);if(b)b.classList.remove('on');});
-  // Show success message
+  var resetFields=['manName','manDesc','manUrl','manDur','manPrice'];
+  resetFields.forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+  var dateEl=document.getElementById('manDate');if(dateEl)dateEl.value='';
+  var prevEl=document.getElementById('photoPreview');if(prevEl)prevEl.style.display='none';
+  document.querySelectorAll('.photo-upload').forEach(function(el){
+    el.textContent=el.textContent.indexOf('Camera')>-1?'\uD83D\uDCF9 Camera':'\uD83D\uDCF7 Galerij';
+  });
+  allTags.forEach(function(t){var b=document.getElementById('man_'+t);if(b)b.classList.remove('on');});
+  // Success melding op knop
   var btn=document.getElementById('addBtn');
-  var orig=btn.textContent;
-  btn.textContent='\u2713 '+name+' toegevoegd!';
-  btn.style.background='var(--green)';
-  setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+  if(btn){
+    var orig=btn.textContent;
+    btn.textContent='\u2713 '+name+' toegevoegd!';
+    btn.style.background='#3D6B4F';
+    setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
+  }
 }
 
 function deleteActivity(id){
