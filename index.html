@@ -272,7 +272,7 @@ footer strong{color:var(--sand-dark);}
         <div class="tags-row" id="manTags"></div>
       </div>
 
-      <button class="add-btn" onclick="addManual()">+ Toevoegen aan lijst</button>
+      <button class="add-btn" id="addBtn" onclick="addManual()">+ Toevoegen aan lijst</button>
     </div>
 
     <div class="filter-row" id="filterRow"></div>
@@ -447,7 +447,12 @@ function addManual(){
   document.getElementById('photoPreview').style.display='none';
   document.querySelector('.photo-upload').textContent='\uD83D\uDCF7 Klik om een foto te kiezen';
   allTags.forEach(t=>{const b=document.getElementById('man_'+t);if(b)b.classList.remove('on');});
-  alert('\u2713 '+name+' toegevoegd!');
+  // Show success message
+  var btn=document.getElementById('addBtn');
+  var orig=btn.textContent;
+  btn.textContent='\u2713 '+name+' toegevoegd!';
+  btn.style.background='var(--green)';
+  setTimeout(function(){btn.textContent=orig;btn.style.background='';},2500);
 }
 
 function deleteActivity(id){
